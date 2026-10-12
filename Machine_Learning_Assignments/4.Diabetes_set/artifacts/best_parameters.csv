@@ -1,0 +1,2 @@
+model__class_weight,model__criterion,model__max_depth,model__min_samples_leaf,model__min_samples_split
+balanced,gini,3,1,2

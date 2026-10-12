@@ -1,0 +1,2971 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+Loading personal and system profiles took 665ms.
+(base) PS C:\Users\Gopal Chavan> cd D:\DBT\mysql-8.0.46-winx64\bin
+(base) PS D:\DBT\mysql-8.0.46-winx64\bin> .\mysql.exe -u root -p
+Enter password: *************
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+(base) PS D:\DBT\mysql-8.0.46-winx64\bin> cd D:\DBT\mysql-8.0.46-winx64\bin
+(base) PS D:\DBT\mysql-8.0.46-winx64\bin> .\mysql.exe -u root -p
+Enter password: *************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.46 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> mysql -u root -p
+    -> ^Z^C
+mysql> use mysql;
+Database changed
+mysql> SHOW TABLES;
++------------------------------------------------------+
+| Tables_in_mysql                                      |
++------------------------------------------------------+
+| columns_priv                                         |
+| component                                            |
+| db                                                   |
+| default_roles                                        |
+| engine_cost                                          |
+| func                                                 |
+| general_log                                          |
+| global_grants                                        |
+| gtid_executed                                        |
+| help_category                                        |
+| help_keyword                                         |
+| help_relation                                        |
+| help_topic                                           |
+| innodb_index_stats                                   |
+| innodb_table_stats                                   |
+| ndb_binlog_index                                     |
+| password_history                                     |
+| plugin                                               |
+| procs_priv                                           |
+| proxies_priv                                         |
+| replication_asynchronous_connection_failover         |
+| replication_asynchronous_connection_failover_managed |
+| replication_group_configuration_version              |
+| replication_group_member_actions                     |
+| role_edges                                           |
+| server_cost                                          |
+| servers                                              |
+| slave_master_info                                    |
+| slave_relay_log_info                                 |
+| slave_worker_info                                    |
+| slow_log                                             |
+| tables_priv                                          |
+| time_zone                                            |
+| time_zone_leap_second                                |
+| time_zone_name                                       |
+| time_zone_transition                                 |
+| time_zone_transition_type                            |
+| user                                                 |
++------------------------------------------------------+
+38 rows in set (0.00 sec)
+
+mysql> use sys;
+Database changed
+mysql> SHOW TABLES;
++-----------------------------------------------+
+| Tables_in_sys                                 |
++-----------------------------------------------+
+| host_summary                                  |
+| host_summary_by_file_io                       |
+| host_summary_by_file_io_type                  |
+| host_summary_by_stages                        |
+| host_summary_by_statement_latency             |
+| host_summary_by_statement_type                |
+| innodb_buffer_stats_by_schema                 |
+| innodb_buffer_stats_by_table                  |
+| innodb_lock_waits                             |
+| io_by_thread_by_latency                       |
+| io_global_by_file_by_bytes                    |
+| io_global_by_file_by_latency                  |
+| io_global_by_wait_by_bytes                    |
+| io_global_by_wait_by_latency                  |
+| latest_file_io                                |
+| memory_by_host_by_current_bytes               |
+| memory_by_thread_by_current_bytes             |
+| memory_by_user_by_current_bytes               |
+| memory_global_by_current_bytes                |
+| memory_global_total                           |
+| metrics                                       |
+| processlist                                   |
+| ps_check_lost_instrumentation                 |
+| schema_auto_increment_columns                 |
+| schema_index_statistics                       |
+| schema_object_overview                        |
+| schema_redundant_indexes                      |
+| schema_table_lock_waits                       |
+| schema_table_statistics                       |
+| schema_table_statistics_with_buffer           |
+| schema_tables_with_full_table_scans           |
+| schema_unused_indexes                         |
+| session                                       |
+| session_ssl_status                            |
+| statement_analysis                            |
+| statements_with_errors_or_warnings            |
+| statements_with_full_table_scans              |
+| statements_with_runtimes_in_95th_percentile   |
+| statements_with_sorting                       |
+| statements_with_temp_tables                   |
+| sys_config                                    |
+| user_summary                                  |
+| user_summary_by_file_io                       |
+| user_summary_by_file_io_type                  |
+| user_summary_by_stages                        |
+| user_summary_by_statement_latency             |
+| user_summary_by_statement_type                |
+| version                                       |
+| wait_classes_global_by_avg_latency            |
+| wait_classes_global_by_latency                |
+| waits_by_host_by_latency                      |
+| waits_by_user_by_latency                      |
+| waits_global_by_latency                       |
+| x$host_summary                                |
+| x$host_summary_by_file_io                     |
+| x$host_summary_by_file_io_type                |
+| x$host_summary_by_stages                      |
+| x$host_summary_by_statement_latency           |
+| x$host_summary_by_statement_type              |
+| x$innodb_buffer_stats_by_schema               |
+| x$innodb_buffer_stats_by_table                |
+| x$innodb_lock_waits                           |
+| x$io_by_thread_by_latency                     |
+| x$io_global_by_file_by_bytes                  |
+| x$io_global_by_file_by_latency                |
+| x$io_global_by_wait_by_bytes                  |
+| x$io_global_by_wait_by_latency                |
+| x$latest_file_io                              |
+| x$memory_by_host_by_current_bytes             |
+| x$memory_by_thread_by_current_bytes           |
+| x$memory_by_user_by_current_bytes             |
+| x$memory_global_by_current_bytes              |
+| x$memory_global_total                         |
+| x$processlist                                 |
+| x$ps_digest_95th_percentile_by_avg_us         |
+| x$ps_digest_avg_latency_distribution          |
+| x$ps_schema_table_statistics_io               |
+| x$schema_flattened_keys                       |
+| x$schema_index_statistics                     |
+| x$schema_table_lock_waits                     |
+| x$schema_table_statistics                     |
+| x$schema_table_statistics_with_buffer         |
+| x$schema_tables_with_full_table_scans         |
+| x$session                                     |
+| x$statement_analysis                          |
+| x$statements_with_errors_or_warnings          |
+| x$statements_with_full_table_scans            |
+| x$statements_with_runtimes_in_95th_percentile |
+| x$statements_with_sorting                     |
+| x$statements_with_temp_tables                 |
+| x$user_summary                                |
+| x$user_summary_by_file_io                     |
+| x$user_summary_by_file_io_type                |
+| x$user_summary_by_stages                      |
+| x$user_summary_by_statement_latency           |
+| x$user_summary_by_statement_type              |
+| x$wait_classes_global_by_avg_latency          |
+| x$wait_classes_global_by_latency              |
+| x$waits_by_host_by_latency                    |
+| x$waits_by_user_by_latency                    |
+| x$waits_global_by_latency                     |
++-----------------------------------------------+
+101 rows in set (0.01 sec)
+
+mysql> use information_schema;
+Database changed
+mysql> SHOW TABLES;
++---------------------------------------+
+| Tables_in_information_schema          |
++---------------------------------------+
+| ADMINISTRABLE_ROLE_AUTHORIZATIONS     |
+| APPLICABLE_ROLES                      |
+| CHARACTER_SETS                        |
+| CHECK_CONSTRAINTS                     |
+| COLLATION_CHARACTER_SET_APPLICABILITY |
+| COLLATIONS                            |
+| COLUMN_PRIVILEGES                     |
+| COLUMN_STATISTICS                     |
+| COLUMNS                               |
+| COLUMNS_EXTENSIONS                    |
+| ENABLED_ROLES                         |
+| ENGINES                               |
+| EVENTS                                |
+| FILES                                 |
+| INNODB_BUFFER_PAGE                    |
+| INNODB_BUFFER_PAGE_LRU                |
+| INNODB_BUFFER_POOL_STATS              |
+| INNODB_CACHED_INDEXES                 |
+| INNODB_CMP                            |
+| INNODB_CMP_PER_INDEX                  |
+| INNODB_CMP_PER_INDEX_RESET            |
+| INNODB_CMP_RESET                      |
+| INNODB_CMPMEM                         |
+| INNODB_CMPMEM_RESET                   |
+| INNODB_COLUMNS                        |
+| INNODB_DATAFILES                      |
+| INNODB_FIELDS                         |
+| INNODB_FOREIGN                        |
+| INNODB_FOREIGN_COLS                   |
+| INNODB_FT_BEING_DELETED               |
+| INNODB_FT_CONFIG                      |
+| INNODB_FT_DEFAULT_STOPWORD            |
+| INNODB_FT_DELETED                     |
+| INNODB_FT_INDEX_CACHE                 |
+| INNODB_FT_INDEX_TABLE                 |
+| INNODB_INDEXES                        |
+| INNODB_METRICS                        |
+| INNODB_SESSION_TEMP_TABLESPACES       |
+| INNODB_TABLES                         |
+| INNODB_TABLESPACES                    |
+| INNODB_TABLESPACES_BRIEF              |
+| INNODB_TABLESTATS                     |
+| INNODB_TEMP_TABLE_INFO                |
+| INNODB_TRX                            |
+| INNODB_VIRTUAL                        |
+| KEY_COLUMN_USAGE                      |
+| KEYWORDS                              |
+| OPTIMIZER_TRACE                       |
+| PARAMETERS                            |
+| PARTITIONS                            |
+| PLUGINS                               |
+| PROCESSLIST                           |
+| PROFILING                             |
+| REFERENTIAL_CONSTRAINTS               |
+| RESOURCE_GROUPS                       |
+| ROLE_COLUMN_GRANTS                    |
+| ROLE_ROUTINE_GRANTS                   |
+| ROLE_TABLE_GRANTS                     |
+| ROUTINES                              |
+| SCHEMA_PRIVILEGES                     |
+| SCHEMATA                              |
+| SCHEMATA_EXTENSIONS                   |
+| ST_GEOMETRY_COLUMNS                   |
+| ST_SPATIAL_REFERENCE_SYSTEMS          |
+| ST_UNITS_OF_MEASURE                   |
+| STATISTICS                            |
+| TABLE_CONSTRAINTS                     |
+| TABLE_CONSTRAINTS_EXTENSIONS          |
+| TABLE_PRIVILEGES                      |
+| TABLES                                |
+| TABLES_EXTENSIONS                     |
+| TABLESPACES                           |
+| TABLESPACES_EXTENSIONS                |
+| TRIGGERS                              |
+| USER_ATTRIBUTES                       |
+| USER_PRIVILEGES                       |
+| VIEW_ROUTINE_USAGE                    |
+| VIEW_TABLE_USAGE                      |
+| VIEWS                                 |
++---------------------------------------+
+79 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE BWT;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use BWT;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE student (
+    ->     id INT,
+    ->     name VARCHAR(50),
+    ->     age INT
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_bwt |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> DESC student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESCRIBE student;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| age   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO student VALUES
+    -> (1, 'Abhishek', 25),
+    -> (2, 'Rahul', 24),
+    -> (3, 'Priya', 23);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM student;
++------+----------+------+
+| id   | name     | age  |
++------+----------+------+
+|    1 | Abhishek |   25 |
+|    2 | Rahul    |   24 |
+|    3 | Priya    |   23 |
++------+----------+------+
+3 rows in set (0.00 sec)
+
+mysql> source D:/DBT/MySQl-Day1.txt;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+ERROR 1054 (42S22): Unknown column 'roll' in 'field list'
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+Query OK, 0 rows affected (0.00 sec)
+
+ERROR 1146 (42S02): Table 'bwt.emp' doesn't exist
+ERROR 1146 (42S02): Table 'bwt.emp' doesn't exist
+ERROR 1146 (42S02): Table 'bwt.emp' doesn't exist
+ERROR 1146 (42S02): Table 'bwt.emp' doesn't exist
+ERROR 1146 (42S02): Table 'bwt.emp' doesn't exist
+ERROR 1146 (42S02): Table 'bwt.new_emp1' doesn't exist
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_bwt |
++---------------+
+| student       |
++---------------+
+1 row in set (0.06 sec)
+
+mysql> use BWT;
+Database changed
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_bwt |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_bwt |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> DROP DATABASE IF EXISTS company_sql_practice;
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> CREATE DATABASE company_sql_practice;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> USE company_sql_practice;
+Database changed
+mysql>
+mysql> CREATE TABLE departments (
+    ->     department_id INT PRIMARY KEY,
+    ->     department_name VARCHAR(100) NOT NULL,
+    ->     location VARCHAR(100),
+    ->     budget DECIMAL(15,2),
+    ->     created_at DATE
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE employees (
+    ->     employee_id INT PRIMARY KEY,
+    ->     employee_name VARCHAR(120) NOT NULL,
+    ->     department_id INT NOT NULL,
+    ->     manager_id INT NULL,
+    ->     job_title VARCHAR(100),
+    ->     salary DECIMAL(12,2) NOT NULL,
+    ->     hire_date DATE NOT NULL,
+    ->     status ENUM('Active','Inactive','Leave') DEFAULT 'Active',
+    ->     email VARCHAR(180) UNIQUE,
+    ->     FOREIGN KEY (department_id) REFERENCES departments(department_id),
+    ->     FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
+    -> );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql>
+mysql> CREATE TABLE customers (
+    ->     customer_id INT PRIMARY KEY,
+    ->     customer_name VARCHAR(150) NOT NULL,
+    ->     customer_email VARCHAR(180) UNIQUE,
+    ->     city VARCHAR(100),
+    ->     segment VARCHAR(50),
+    ->     signup_date DATE,
+    ->     credit_limit DECIMAL(14,2)
+    -> );
+Query OK, 0 rows affected (0.15 sec)
+
+mysql>
+mysql>
+mysql> CREATE TABLE projects (
+    ->     project_id INT PRIMARY KEY,
+    ->     project_name VARCHAR(150) NOT NULL,
+    ->     customer_id INT NOT NULL,
+    ->     department_id INT NOT NULL,
+    ->     start_date DATE,
+    ->     end_date DATE,
+    ->     project_budget DECIMAL(15,2),
+    ->     status ENUM('Planned','Active','Completed','On Hold') DEFAULT 'Planned',
+    ->     FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    ->     FOREIGN KEY (department_id) REFERENCES departments(department_id)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> CREATE TABLE orders (
+    ->     order_id BIGINT PRIMARY KEY,
+    ->     customer_id INT NOT NULL,
+    ->     order_date DATE NOT NULL,
+    ->     status ENUM('Pending','Shipped','Delivered','Cancelled') NOT NULL,
+    ->     sales_channel ENUM('Web','Mobile','Partner','Store') NOT NULL,
+    ->     total_amount DECIMAL(14,2) DEFAULT 0,
+    ->     FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE order_items (
+    ->     order_item_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    ->     order_id BIGINT NOT NULL,
+    ->     product_id INT NOT NULL,
+    ->     quantity INT NOT NULL,
+    ->     unit_price DECIMAL(12,2) NOT NULL,
+    ->     FOREIGN KEY (order_id) REFERENCES orders(order_id)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE employee_projects (
+    ->     employee_id INT NOT NULL,
+    ->     project_id INT NOT NULL,
+    ->     role_name VARCHAR(100),
+    ->     allocation_pct DECIMAL(5,2),
+    ->     assigned_date DATE,
+    ->     PRIMARY KEY (employee_id, project_id),
+    ->     FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    ->     FOREIGN KEY (project_id) REFERENCES projects(project_id)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> CREATE TABLE performance_reviews (
+    ->     review_id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     employee_id INT NOT NULL,
+    ->     review_date DATE NOT NULL,
+    ->     rating DECIMAL(3,2),
+    ->     review_text VARCHAR(500),
+    ->     FOREIGN KEY (employee_id) REFERENCES employees(employee_id)
+    -> );
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
+mysql> CREATE TABLE salary_audit (
+    ->     audit_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    ->     employee_id INT NOT NULL,
+    ->     salary_snapshot DECIMAL(12,2),
+    ->     captured_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++--------------------------------+
+| Tables_in_company_sql_practice |
++--------------------------------+
+| customers                      |
+| departments                    |
+| employee_projects              |
+| employees                      |
+| order_items                    |
+| orders                         |
+| performance_reviews            |
+| projects                       |
+| salary_audit                   |
++--------------------------------+
+9 rows in set (0.01 sec)
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| bwt                  |
+| company_sql_practice |
+| information_schema   |
+| mysql                |
+| performance_schema   |
+| sys                  |
++----------------------+
+6 rows in set (0.00 sec)
+
+mysql> use company_sql_practice;
+Database changed
+mysql> show tables;
++--------------------------------+
+| Tables_in_company_sql_practice |
++--------------------------------+
+| customers                      |
+| departments                    |
+| employee_projects              |
+| employees                      |
+| order_items                    |
+| orders                         |
+| performance_reviews            |
+| projects                       |
+| salary_audit                   |
++--------------------------------+
+9 rows in set (0.00 sec)
+
+mysql> INSERT INTO departments VALUES
+    -> (1,'Engineering','Pune',6500000,'2020-01-10'),
+    -> (2,'Data & Analytics','Bengaluru',5200000,'2020-03-15'),
+    -> (3,'Finance','Mumbai',4200000,'2019-07-01'),
+    -> (4,'Human Resources','Pune',3000000,'2018-04-20'),
+    -> (5,'Sales','Delhi',7000000,'2019-09-12'),
+    -> (6,'Marketing','Hyderabad',4800000,'2020-06-05'),
+    -> (7,'Operations','Chennai',5600000,'2018-11-18'),
+    -> (8,'Customer Success','Noida',3900000,'2021-02-08'),
+    -> (9,'Product','Bengaluru',6100000,'2020-08-17'),
+    -> (10,'Cyber Security','Pune',4500000,'2021-05-25'),
+    -> (11,'Procurement','Mumbai',3300000,'2019-12-02'),
+    -> (12,'Legal','Delhi',2800000,'2022-01-11');
+Query OK, 12 rows affected (0.02 sec)
+Records: 12  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO employees
+    -> (employee_id,employee_name,department_id,manager_id,job_title,salary,hire_date,status,email)
+    -> VALUES
+    -> (1001,'Aarav Kulkarni',1,NULL,'VP Engineering',185000,'2018-01-15','Active','aarav.k@example.com'),
+    -> (1002,'Isha Mehta',2,NULL,'Head of Analytics',172000,'2018-06-11','Active','isha.m@example.com'),
+    -> (1003,'Rohan Shah',3,NULL,'Finance Director',165000,'2017-09-04','Active','rohan.s@example.com'),
+    -> (1004,'Neha Patil',4,NULL,'HR Director',145000,'2019-02-18','Active','neha.p@example.com'),
+    -> (1005,'Vikram Rao',5,NULL,'Sales Director',178000,'2017-11-21','Active','vikram.r@example.com'),
+    -> (1006,'Sana Khan',6,NULL,'Marketing Director',158000,'2019-08-12','Active','sana.k@example.com'),
+    -> (1007,'Aditya Nair',7,NULL,'Operations Director',160000,'2018-03-19','Active','aditya.n@example.com'),
+    -> (1008,'Priya Deshmukh',8,NULL,'Customer Success Director',150000,'2020-01-06','Active','priya.d@example.com'),
+    -> (1009,'Kunal Joshi',9,NULL,'Product Director',175000,'2018-12-10','Active','kunal.j@example.com'),
+    -> (1010,'Meera Iyer',10,NULL,'Security Director',168000,'2019-05-27','Active','meera.i@example.com'),
+    -> (1011,'Sameer Gupta',11,NULL,'Procurement Director',138000,'2020-04-13','Active','sameer.g@example.com'),
+    -> (1012,'Tanya Singh',12,NULL,'Legal Director',155000,'2021-01-18','Active','tanya.s@example.com');
+Query OK, 12 rows affected (0.01 sec)
+Records: 12  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+--------+----------------------+
+| employee_id | employee_name  | department_id | manager_id | job_title                 | salary    | hire_date  | status | email                |
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+--------+----------------------+
+|        1001 | Aarav Kulkarni |             1 |       NULL | VP Engineering            | 185000.00 | 2018-01-15 | Active | aarav.k@example.com  |
+|        1002 | Isha Mehta     |             2 |       NULL | Head of Analytics         | 172000.00 | 2018-06-11 | Active | isha.m@example.com   |
+|        1003 | Rohan Shah     |             3 |       NULL | Finance Director          | 165000.00 | 2017-09-04 | Active | rohan.s@example.com  |
+|        1004 | Neha Patil     |             4 |       NULL | HR Director               | 145000.00 | 2019-02-18 | Active | neha.p@example.com   |
+|        1005 | Vikram Rao     |             5 |       NULL | Sales Director            | 178000.00 | 2017-11-21 | Active | vikram.r@example.com |
+|        1006 | Sana Khan      |             6 |       NULL | Marketing Director        | 158000.00 | 2019-08-12 | Active | sana.k@example.com   |
+|        1007 | Aditya Nair    |             7 |       NULL | Operations Director       | 160000.00 | 2018-03-19 | Active | aditya.n@example.com |
+|        1008 | Priya Deshmukh |             8 |       NULL | Customer Success Director | 150000.00 | 2020-01-06 | Active | priya.d@example.com  |
+|        1009 | Kunal Joshi    |             9 |       NULL | Product Director          | 175000.00 | 2018-12-10 | Active | kunal.j@example.com  |
+|        1010 | Meera Iyer     |            10 |       NULL | Security Director         | 168000.00 | 2019-05-27 | Active | meera.i@example.com  |
+|        1011 | Sameer Gupta   |            11 |       NULL | Procurement Director      | 138000.00 | 2020-04-13 | Active | sameer.g@example.com |
+|        1012 | Tanya Singh    |            12 |       NULL | Legal Director            | 155000.00 | 2021-01-18 | Active | tanya.s@example.com  |
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+--------+----------------------+
+12 rows in set (0.00 sec)
+
+mysql> select * from departments;
++---------------+------------------+-----------+------------+------------+
+| department_id | department_name  | location  | budget     | created_at |
++---------------+------------------+-----------+------------+------------+
+|             1 | Engineering      | Pune      | 6500000.00 | 2020-01-10 |
+|             2 | Data & Analytics | Bengaluru | 5200000.00 | 2020-03-15 |
+|             3 | Finance          | Mumbai    | 4200000.00 | 2019-07-01 |
+|             4 | Human Resources  | Pune      | 3000000.00 | 2018-04-20 |
+|             5 | Sales            | Delhi     | 7000000.00 | 2019-09-12 |
+|             6 | Marketing        | Hyderabad | 4800000.00 | 2020-06-05 |
+|             7 | Operations       | Chennai   | 5600000.00 | 2018-11-18 |
+|             8 | Customer Success | Noida     | 3900000.00 | 2021-02-08 |
+|             9 | Product          | Bengaluru | 6100000.00 | 2020-08-17 |
+|            10 | Cyber Security   | Pune      | 4500000.00 | 2021-05-25 |
+|            11 | Procurement      | Mumbai    | 3300000.00 | 2019-12-02 |
+|            12 | Legal            | Delhi     | 2800000.00 | 2022-01-11 |
++---------------+------------------+-----------+------------+------------+
+12 rows in set (0.00 sec)
+
+mysql> desc departments;
++-----------------+---------------+------+-----+---------+-------+
+| Field           | Type          | Null | Key | Default | Extra |
++-----------------+---------------+------+-----+---------+-------+
+| department_id   | int           | NO   | PRI | NULL    |       |
+| department_name | varchar(100)  | NO   |     | NULL    |       |
+| location        | varchar(100)  | YES  |     | NULL    |       |
+| budget          | decimal(15,2) | YES  |     | NULL    |       |
+| created_at      | date          | YES  |     | NULL    |       |
++-----------------+---------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> desc employees;
++---------------+-----------------------------------+------+-----+---------+-------+
+| Field         | Type                              | Null | Key | Default | Extra |
++---------------+-----------------------------------+------+-----+---------+-------+
+| employee_id   | int                               | NO   | PRI | NULL    |       |
+| employee_name | varchar(120)                      | NO   |     | NULL    |       |
+| department_id | int                               | NO   | MUL | NULL    |       |
+| manager_id    | int                               | YES  | MUL | NULL    |       |
+| job_title     | varchar(100)                      | YES  |     | NULL    |       |
+| salary        | decimal(12,2)                     | NO   |     | NULL    |       |
+| hire_date     | date                              | NO   |     | NULL    |       |
+| status        | enum('Active','Inactive','Leave') | YES  |     | Active  |       |
+| email         | varchar(180)                      | YES  | UNI | NULL    |       |
++---------------+-----------------------------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> INSERT INTO employees
+    -> (employee_id,employee_name,department_id,manager_id,job_title,salary,hire_date,status,email)
+    -> SELECT
+    ->   1012 + n,
+    ->   CONCAT('Employee_',1012+n),
+    ->   MOD(n-1,12)+1,
+    ->   1000 + MOD(n-1,12)+1,
+    ->   CASE MOD(n,6)
+    ->     WHEN 0 THEN 'Senior Analyst'
+    ->     WHEN 1 THEN 'Software Engineer'
+    ->     WHEN 2 THEN 'Business Analyst'
+    ->     WHEN 3 THEN 'Associate Manager'
+    ->     WHEN 4 THEN 'Specialist'
+    ->     ELSE 'Consultant'
+    ->   END,
+    ->   55000 + MOD(n*7919,90000),
+    ->   DATE_ADD('2019-01-01', INTERVAL MOD(n*37,2700) DAY),
+    ->   CASE MOD(n,17) WHEN 0 THEN 'Leave' WHEN 1 THEN 'Inactive' ELSE 'Active' END,
+    ->   CONCAT('employee_',1012+n,'@example.com')
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 AS n
+    ->   FROM
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2) hundreds
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 108;
+Query OK, 108 rows affected (0.06 sec)
+Records: 108  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO customers
+    -> (customer_id,customer_name,customer_email,city,segment,signup_date,credit_limit)
+    -> SELECT
+    ->   n,
+    ->   CONCAT('Customer_',n),
+    ->   CONCAT('customer_',n,'@example.com'),
+    ->   ELT(MOD(n-1,10)+1,'Pune','Mumbai','Bengaluru','Delhi','Hyderabad','Chennai','Noida','Kolkata','Jaipur','Ahmedabad'),
+    ->   ELT(MOD(n-1,5)+1,'Enterprise','SMB','Consumer','Startup','Mid-Market'),
+    ->   DATE_ADD('2020-01-01',INTERVAL MOD(n*23,2400) DAY),
+    ->   25000 + MOD(n*1777,475000)
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) hundreds
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 500;
+Query OK, 500 rows affected (0.04 sec)
+Records: 500  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO projects
+    -> (project_id,project_name,customer_id,department_id,start_date,end_date,project_budget,status)
+    -> SELECT
+    ->   n,
+    ->   CONCAT('Project_',n),
+    ->   MOD(n-1,500)+1,
+    ->   MOD(n-1,12)+1,
+    ->   DATE_ADD('2021-01-01',INTERVAL MOD(n*17,1700) DAY),
+    ->   DATE_ADD(DATE_ADD('2021-01-01',INTERVAL MOD(n*17,1700) DAY),INTERVAL (90+MOD(n*13,540)) DAY),
+    ->   100000 + MOD(n*27191,4900000),
+    ->   ELT(MOD(n-1,4)+1,'Planned','Active','Completed','On Hold')
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4) hundreds
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 120;
+Query OK, 120 rows affected (0.01 sec)
+Records: 120  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO employee_projects(employee_id,project_id,role_name,allocation_pct,assigned_date)
+    -> SELECT
+    ->   1013 + MOD(n*7,108),
+    ->   1 + MOD(n*11,120),
+    ->   ELT(MOD(n,5)+1,'Developer','Analyst','Lead','Consultant','Project Manager'),
+    ->   25 + MOD(n*7,76),
+    ->   DATE_ADD('2022-01-01',INTERVAL MOD(n*19,1200) DAY)
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) hundreds
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 600;
+Query OK, 600 rows affected (0.02 sec)
+Records: 600  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO order_items(order_id,product_id,quantity,unit_price)
+    -> SELECT 50000 + MOD(n-1,3000)+1,
+    ->        1+MOD(n*17,250),
+    ->        1+MOD(n,5),
+    ->        50+MOD(n*313,4950)
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 + thousands.n*1000 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) hundreds
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2) thousands
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 6000;
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`company_sql_practice`.`order_items`, CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`))
+mysql> INSERT INTO orders(order_id,customer_id,order_date,status,sales_channel,total_amount)
+    -> SELECT
+    ->   50000+n,
+    ->   1+MOD(n*37,500),
+    ->   DATE_ADD('2022-01-01',INTERVAL MOD(n*11,1700) DAY),
+    ->   ELT(MOD(n-1,4)+1,'Pending','Shipped','Delivered','Cancelled'),
+    ->   ELT(MOD(n-1,4)+1,'Web','Mobile','Partner','Store'),
+    ->   0
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 + thousands.n*1000 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) hundreds
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2) thousands
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 3000;
+Query OK, 3000 rows affected (0.20 sec)
+Records: 3000  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO order_items(order_id,product_id,quantity,unit_price)
+    -> SELECT 50000 + MOD(n-1,3000)+1,
+    ->        1+MOD(n*17,250),
+    ->        1+MOD(n,5),
+    ->        50+MOD(n*313,4950)
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 + thousands.n*1000 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) hundreds
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2) thousands
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 6000;
+Query OK, 3000 rows affected (0.10 sec)
+Records: 3000  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE orders o
+    -> JOIN (
+    ->   SELECT order_id, SUM(quantity*unit_price) total
+    ->   FROM order_items GROUP BY order_id
+    -> ) x ON x.order_id=o.order_id
+    -> SET o.total_amount=x.total;
+Query OK, 3000 rows affected (0.08 sec)
+Rows matched: 3000  Changed: 3000  Warnings: 0
+
+mysql> INSERT INTO performance_reviews(employee_id,review_date,rating,review_text)
+    -> SELECT
+    ->   1013+MOD(n*7,108),
+    ->   DATE_ADD('2022-01-01',INTERVAL MOD(n*29,1500) DAY),
+    ->   ROUND(1 + MOD(n*13,41)/10, 2),
+    ->   CONCAT('Performance review ',n)
+    -> FROM (
+    ->   SELECT ones.n + tens.n*10 + hundreds.n*100 AS n
+    ->   FROM
+    ->     (SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    ->      UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10) ones
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) tens
+    ->   CROSS JOIN
+    ->     (SELECT 0 n UNION ALL SELECT 1 UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4
+    ->      UNION ALL SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9) hundreds
+    -> ) nums
+    -> WHERE n BETWEEN 1 AND 1000;
+Query OK, 1000 rows affected (0.05 sec)
+Records: 1000  Duplicates: 0  Warnings: 0
+
+mysql> SELECT 'departments' table_name, COUNT(*) row_count FROM departments
+    -> UNION ALL SELECT 'employees', COUNT(*) FROM employees
+    -> UNION ALL SELECT 'customers', COUNT(*) FROM customers
+    -> UNION ALL SELECT 'projects', COUNT(*) FROM projects
+    -> UNION ALL SELECT 'orders', COUNT(*) FROM orders
+    -> UNION ALL SELECT 'order_items', COUNT(*) FROM order_items
+    -> UNION ALL SELECT 'employee_projects', COUNT(*) FROM employee_projects
+    -> UNION ALL SELECT 'performance_reviews', COUNT(*) FROM performance_reviews;
++---------------------+-----------+
+| table_name          | row_count |
++---------------------+-----------+
+| departments         |        12 |
+| employees           |       120 |
+| customers           |       500 |
+| projects            |       120 |
+| orders              |      3000 |
+| order_items         |      3000 |
+| employee_projects   |       600 |
+| performance_reviews |      1000 |
++---------------------+-----------+
+8 rows in set (0.02 sec)
+
+mysql> USE company_sql_practice;
+Database changed
+mysql> SHOW DATABASES;
++----------------------+
+| Database             |
++----------------------+
+| bwt                  |
+| company_sql_practice |
+| information_schema   |
+| mysql                |
+| performance_schema   |
+| sys                  |
++----------------------+
+6 rows in set (0.00 sec)
+
+mysql> USE company_sql_practice;
+Database changed
+mysql> SHOW TABLES;
++--------------------------------+
+| Tables_in_company_sql_practice |
++--------------------------------+
+| customers                      |
+| departments                    |
+| employee_projects              |
+| employees                      |
+| order_items                    |
+| orders                         |
+| performance_reviews            |
+| projects                       |
+| salary_audit                   |
++--------------------------------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT DATABASE();
++----------------------+
+| DATABASE()           |
++----------------------+
+| company_sql_practice |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> DESCRIBE employees;
++---------------+-----------------------------------+------+-----+---------+-------+
+| Field         | Type                              | Null | Key | Default | Extra |
++---------------+-----------------------------------+------+-----+---------+-------+
+| employee_id   | int                               | NO   | PRI | NULL    |       |
+| employee_name | varchar(120)                      | NO   |     | NULL    |       |
+| department_id | int                               | NO   | MUL | NULL    |       |
+| manager_id    | int                               | YES  | MUL | NULL    |       |
+| job_title     | varchar(100)                      | YES  |     | NULL    |       |
+| salary        | decimal(12,2)                     | NO   |     | NULL    |       |
+| hire_date     | date                              | NO   |     | NULL    |       |
+| status        | enum('Active','Inactive','Leave') | YES  |     | Active  |       |
+| email         | varchar(180)                      | YES  | UNI | NULL    |       |
++---------------+-----------------------------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> DESCRIBE departments;
++-----------------+---------------+------+-----+---------+-------+
+| Field           | Type          | Null | Key | Default | Extra |
++-----------------+---------------+------+-----+---------+-------+
+| department_id   | int           | NO   | PRI | NULL    |       |
+| department_name | varchar(100)  | NO   |     | NULL    |       |
+| location        | varchar(100)  | YES  |     | NULL    |       |
+| budget          | decimal(15,2) | YES  |     | NULL    |       |
+| created_at      | date          | YES  |     | NULL    |       |
++-----------------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> DESCRIBE customers;
++----------------+---------------+------+-----+---------+-------+
+| Field          | Type          | Null | Key | Default | Extra |
++----------------+---------------+------+-----+---------+-------+
+| customer_id    | int           | NO   | PRI | NULL    |       |
+| customer_name  | varchar(150)  | NO   |     | NULL    |       |
+| customer_email | varchar(180)  | YES  | UNI | NULL    |       |
+| city           | varchar(100)  | YES  |     | NULL    |       |
+| segment        | varchar(50)   | YES  |     | NULL    |       |
+| signup_date    | date          | YES  |     | NULL    |       |
+| credit_limit   | decimal(14,2) | YES  |     | NULL    |       |
++----------------+---------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> DESCRIBE orders;
++---------------+---------------------------------------------------+------+-----+---------+-------+
+| Field         | Type                                              | Null | Key | Default | Extra |
++---------------+---------------------------------------------------+------+-----+---------+-------+
+| order_id      | bigint                                            | NO   | PRI | NULL    |       |
+| customer_id   | int                                               | NO   | MUL | NULL    |       |
+| order_date    | date                                              | NO   |     | NULL    |       |
+| status        | enum('Pending','Shipped','Delivered','Cancelled') | NO   |     | NULL    |       |
+| sales_channel | enum('Web','Mobile','Partner','Store')            | NO   |     | NULL    |       |
+| total_amount  | decimal(14,2)                                     | YES  |     | 0.00    |       |
++---------------+---------------------------------------------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name, salary
+    -> FROM employees;
++-------------+----------------+-----------+
+| employee_id | employee_name  | salary    |
++-------------+----------------+-----------+
+|        1001 | Aarav Kulkarni | 185000.00 |
+|        1002 | Isha Mehta     | 172000.00 |
+|        1003 | Rohan Shah     | 165000.00 |
+|        1004 | Neha Patil     | 145000.00 |
+|        1005 | Vikram Rao     | 178000.00 |
+|        1006 | Sana Khan      | 158000.00 |
+|        1007 | Aditya Nair    | 160000.00 |
+|        1008 | Priya Deshmukh | 150000.00 |
+|        1009 | Kunal Joshi    | 175000.00 |
+|        1010 | Meera Iyer     | 168000.00 |
+|        1011 | Sameer Gupta   | 138000.00 |
+|        1012 | Tanya Singh    | 155000.00 |
+|        1013 | Employee_1013  |  62919.00 |
+|        1014 | Employee_1014  |  70838.00 |
+|        1015 | Employee_1015  |  78757.00 |
+|        1016 | Employee_1016  |  86676.00 |
+|        1017 | Employee_1017  |  94595.00 |
+|        1018 | Employee_1018  | 102514.00 |
+|        1019 | Employee_1019  | 110433.00 |
+|        1020 | Employee_1020  | 118352.00 |
+|        1021 | Employee_1021  | 126271.00 |
+|        1022 | Employee_1022  | 134190.00 |
+|        1023 | Employee_1023  | 142109.00 |
+|        1024 | Employee_1024  |  60028.00 |
+|        1025 | Employee_1025  |  67947.00 |
+|        1026 | Employee_1026  |  75866.00 |
+|        1027 | Employee_1027  |  83785.00 |
+|        1028 | Employee_1028  |  91704.00 |
+|        1029 | Employee_1029  |  99623.00 |
+|        1030 | Employee_1030  | 107542.00 |
+|        1031 | Employee_1031  | 115461.00 |
+|        1032 | Employee_1032  | 123380.00 |
+|        1033 | Employee_1033  | 131299.00 |
+|        1034 | Employee_1034  | 139218.00 |
+|        1035 | Employee_1035  |  57137.00 |
+|        1036 | Employee_1036  |  65056.00 |
+|        1037 | Employee_1037  |  72975.00 |
+|        1038 | Employee_1038  |  80894.00 |
+|        1039 | Employee_1039  |  88813.00 |
+|        1040 | Employee_1040  |  96732.00 |
+|        1041 | Employee_1041  | 104651.00 |
+|        1042 | Employee_1042  | 112570.00 |
+|        1043 | Employee_1043  | 120489.00 |
+|        1044 | Employee_1044  | 128408.00 |
+|        1045 | Employee_1045  | 136327.00 |
+|        1046 | Employee_1046  | 144246.00 |
+|        1047 | Employee_1047  |  62165.00 |
+|        1048 | Employee_1048  |  70084.00 |
+|        1049 | Employee_1049  |  78003.00 |
+|        1050 | Employee_1050  |  85922.00 |
+|        1051 | Employee_1051  |  93841.00 |
+|        1052 | Employee_1052  | 101760.00 |
+|        1053 | Employee_1053  | 109679.00 |
+|        1054 | Employee_1054  | 117598.00 |
+|        1055 | Employee_1055  | 125517.00 |
+|        1056 | Employee_1056  | 133436.00 |
+|        1057 | Employee_1057  | 141355.00 |
+|        1058 | Employee_1058  |  59274.00 |
+|        1059 | Employee_1059  |  67193.00 |
+|        1060 | Employee_1060  |  75112.00 |
+|        1061 | Employee_1061  |  83031.00 |
+|        1062 | Employee_1062  |  90950.00 |
+|        1063 | Employee_1063  |  98869.00 |
+|        1064 | Employee_1064  | 106788.00 |
+|        1065 | Employee_1065  | 114707.00 |
+|        1066 | Employee_1066  | 122626.00 |
+|        1067 | Employee_1067  | 130545.00 |
+|        1068 | Employee_1068  | 138464.00 |
+|        1069 | Employee_1069  |  56383.00 |
+|        1070 | Employee_1070  |  64302.00 |
+|        1071 | Employee_1071  |  72221.00 |
+|        1072 | Employee_1072  |  80140.00 |
+|        1073 | Employee_1073  |  88059.00 |
+|        1074 | Employee_1074  |  95978.00 |
+|        1075 | Employee_1075  | 103897.00 |
+|        1076 | Employee_1076  | 111816.00 |
+|        1077 | Employee_1077  | 119735.00 |
+|        1078 | Employee_1078  | 127654.00 |
+|        1079 | Employee_1079  | 135573.00 |
+|        1080 | Employee_1080  | 143492.00 |
+|        1081 | Employee_1081  |  61411.00 |
+|        1082 | Employee_1082  |  69330.00 |
+|        1083 | Employee_1083  |  77249.00 |
+|        1084 | Employee_1084  |  85168.00 |
+|        1085 | Employee_1085  |  93087.00 |
+|        1086 | Employee_1086  | 101006.00 |
+|        1087 | Employee_1087  | 108925.00 |
+|        1088 | Employee_1088  | 116844.00 |
+|        1089 | Employee_1089  | 124763.00 |
+|        1090 | Employee_1090  | 132682.00 |
+|        1091 | Employee_1091  | 140601.00 |
+|        1092 | Employee_1092  |  58520.00 |
+|        1093 | Employee_1093  |  66439.00 |
+|        1094 | Employee_1094  |  74358.00 |
+|        1095 | Employee_1095  |  82277.00 |
+|        1096 | Employee_1096  |  90196.00 |
+|        1097 | Employee_1097  |  98115.00 |
+|        1098 | Employee_1098  | 106034.00 |
+|        1099 | Employee_1099  | 113953.00 |
+|        1100 | Employee_1100  | 121872.00 |
+|        1101 | Employee_1101  | 129791.00 |
+|        1102 | Employee_1102  | 137710.00 |
+|        1103 | Employee_1103  |  55629.00 |
+|        1104 | Employee_1104  |  63548.00 |
+|        1105 | Employee_1105  |  71467.00 |
+|        1106 | Employee_1106  |  79386.00 |
+|        1107 | Employee_1107  |  87305.00 |
+|        1108 | Employee_1108  |  95224.00 |
+|        1109 | Employee_1109  | 103143.00 |
+|        1110 | Employee_1110  | 111062.00 |
+|        1111 | Employee_1111  | 118981.00 |
+|        1112 | Employee_1112  | 126900.00 |
+|        1113 | Employee_1113  | 134819.00 |
+|        1114 | Employee_1114  | 142738.00 |
+|        1115 | Employee_1115  |  60657.00 |
+|        1116 | Employee_1116  |  68576.00 |
+|        1117 | Employee_1117  |  76495.00 |
+|        1118 | Employee_1118  |  84414.00 |
+|        1119 | Employee_1119  |  92333.00 |
+|        1120 | Employee_1120  | 100252.00 |
++-------------+----------------+-----------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT *
+    -> FROM employees;
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+----------+---------------------------+
+| employee_id | employee_name  | department_id | manager_id | job_title                 | salary    | hire_date  | status   | email                     |
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+----------+---------------------------+
+|        1001 | Aarav Kulkarni |             1 |       NULL | VP Engineering            | 185000.00 | 2018-01-15 | Active   | aarav.k@example.com       |
+|        1002 | Isha Mehta     |             2 |       NULL | Head of Analytics         | 172000.00 | 2018-06-11 | Active   | isha.m@example.com        |
+|        1003 | Rohan Shah     |             3 |       NULL | Finance Director          | 165000.00 | 2017-09-04 | Active   | rohan.s@example.com       |
+|        1004 | Neha Patil     |             4 |       NULL | HR Director               | 145000.00 | 2019-02-18 | Active   | neha.p@example.com        |
+|        1005 | Vikram Rao     |             5 |       NULL | Sales Director            | 178000.00 | 2017-11-21 | Active   | vikram.r@example.com      |
+|        1006 | Sana Khan      |             6 |       NULL | Marketing Director        | 158000.00 | 2019-08-12 | Active   | sana.k@example.com        |
+|        1007 | Aditya Nair    |             7 |       NULL | Operations Director       | 160000.00 | 2018-03-19 | Active   | aditya.n@example.com      |
+|        1008 | Priya Deshmukh |             8 |       NULL | Customer Success Director | 150000.00 | 2020-01-06 | Active   | priya.d@example.com       |
+|        1009 | Kunal Joshi    |             9 |       NULL | Product Director          | 175000.00 | 2018-12-10 | Active   | kunal.j@example.com       |
+|        1010 | Meera Iyer     |            10 |       NULL | Security Director         | 168000.00 | 2019-05-27 | Active   | meera.i@example.com       |
+|        1011 | Sameer Gupta   |            11 |       NULL | Procurement Director      | 138000.00 | 2020-04-13 | Active   | sameer.g@example.com      |
+|        1012 | Tanya Singh    |            12 |       NULL | Legal Director            | 155000.00 | 2021-01-18 | Active   | tanya.s@example.com       |
+|        1013 | Employee_1013  |             1 |       1001 | Software Engineer         |  62919.00 | 2019-02-07 | Inactive | employee_1013@example.com |
+|        1014 | Employee_1014  |             2 |       1002 | Business Analyst          |  70838.00 | 2019-03-16 | Active   | employee_1014@example.com |
+|        1015 | Employee_1015  |             3 |       1003 | Associate Manager         |  78757.00 | 2019-04-22 | Active   | employee_1015@example.com |
+|        1016 | Employee_1016  |             4 |       1004 | Specialist                |  86676.00 | 2019-05-29 | Active   | employee_1016@example.com |
+|        1017 | Employee_1017  |             5 |       1005 | Consultant                |  94595.00 | 2019-07-05 | Active   | employee_1017@example.com |
+|        1018 | Employee_1018  |             6 |       1006 | Senior Analyst            | 102514.00 | 2019-08-11 | Active   | employee_1018@example.com |
+|        1019 | Employee_1019  |             7 |       1007 | Software Engineer         | 110433.00 | 2019-09-17 | Active   | employee_1019@example.com |
+|        1020 | Employee_1020  |             8 |       1008 | Business Analyst          | 118352.00 | 2019-10-24 | Active   | employee_1020@example.com |
+|        1021 | Employee_1021  |             9 |       1009 | Associate Manager         | 126271.00 | 2019-11-30 | Active   | employee_1021@example.com |
+|        1022 | Employee_1022  |            10 |       1010 | Specialist                | 134190.00 | 2020-01-06 | Active   | employee_1022@example.com |
+|        1023 | Employee_1023  |            11 |       1011 | Consultant                | 142109.00 | 2020-02-12 | Active   | employee_1023@example.com |
+|        1024 | Employee_1024  |            12 |       1012 | Senior Analyst            |  60028.00 | 2020-03-20 | Active   | employee_1024@example.com |
+|        1025 | Employee_1025  |             1 |       1001 | Software Engineer         |  67947.00 | 2020-04-26 | Active   | employee_1025@example.com |
+|        1026 | Employee_1026  |             2 |       1002 | Business Analyst          |  75866.00 | 2020-06-02 | Active   | employee_1026@example.com |
+|        1027 | Employee_1027  |             3 |       1003 | Associate Manager         |  83785.00 | 2020-07-09 | Active   | employee_1027@example.com |
+|        1028 | Employee_1028  |             4 |       1004 | Specialist                |  91704.00 | 2020-08-15 | Active   | employee_1028@example.com |
+|        1029 | Employee_1029  |             5 |       1005 | Consultant                |  99623.00 | 2020-09-21 | Leave    | employee_1029@example.com |
+|        1030 | Employee_1030  |             6 |       1006 | Senior Analyst            | 107542.00 | 2020-10-28 | Inactive | employee_1030@example.com |
+|        1031 | Employee_1031  |             7 |       1007 | Software Engineer         | 115461.00 | 2020-12-04 | Active   | employee_1031@example.com |
+|        1032 | Employee_1032  |             8 |       1008 | Business Analyst          | 123380.00 | 2021-01-10 | Active   | employee_1032@example.com |
+|        1033 | Employee_1033  |             9 |       1009 | Associate Manager         | 131299.00 | 2021-02-16 | Active   | employee_1033@example.com |
+|        1034 | Employee_1034  |            10 |       1010 | Specialist                | 139218.00 | 2021-03-25 | Active   | employee_1034@example.com |
+|        1035 | Employee_1035  |            11 |       1011 | Consultant                |  57137.00 | 2021-05-01 | Active   | employee_1035@example.com |
+|        1036 | Employee_1036  |            12 |       1012 | Senior Analyst            |  65056.00 | 2021-06-07 | Active   | employee_1036@example.com |
+|        1037 | Employee_1037  |             1 |       1001 | Software Engineer         |  72975.00 | 2021-07-14 | Active   | employee_1037@example.com |
+|        1038 | Employee_1038  |             2 |       1002 | Business Analyst          |  80894.00 | 2021-08-20 | Active   | employee_1038@example.com |
+|        1039 | Employee_1039  |             3 |       1003 | Associate Manager         |  88813.00 | 2021-09-26 | Active   | employee_1039@example.com |
+|        1040 | Employee_1040  |             4 |       1004 | Specialist                |  96732.00 | 2021-11-02 | Active   | employee_1040@example.com |
+|        1041 | Employee_1041  |             5 |       1005 | Consultant                | 104651.00 | 2021-12-09 | Active   | employee_1041@example.com |
+|        1042 | Employee_1042  |             6 |       1006 | Senior Analyst            | 112570.00 | 2022-01-15 | Active   | employee_1042@example.com |
+|        1043 | Employee_1043  |             7 |       1007 | Software Engineer         | 120489.00 | 2022-02-21 | Active   | employee_1043@example.com |
+|        1044 | Employee_1044  |             8 |       1008 | Business Analyst          | 128408.00 | 2022-03-30 | Active   | employee_1044@example.com |
+|        1045 | Employee_1045  |             9 |       1009 | Associate Manager         | 136327.00 | 2022-05-06 | Active   | employee_1045@example.com |
+|        1046 | Employee_1046  |            10 |       1010 | Specialist                | 144246.00 | 2022-06-12 | Leave    | employee_1046@example.com |
+|        1047 | Employee_1047  |            11 |       1011 | Consultant                |  62165.00 | 2022-07-19 | Inactive | employee_1047@example.com |
+|        1048 | Employee_1048  |            12 |       1012 | Senior Analyst            |  70084.00 | 2022-08-25 | Active   | employee_1048@example.com |
+|        1049 | Employee_1049  |             1 |       1001 | Software Engineer         |  78003.00 | 2022-10-01 | Active   | employee_1049@example.com |
+|        1050 | Employee_1050  |             2 |       1002 | Business Analyst          |  85922.00 | 2022-11-07 | Active   | employee_1050@example.com |
+|        1051 | Employee_1051  |             3 |       1003 | Associate Manager         |  93841.00 | 2022-12-14 | Active   | employee_1051@example.com |
+|        1052 | Employee_1052  |             4 |       1004 | Specialist                | 101760.00 | 2023-01-20 | Active   | employee_1052@example.com |
+|        1053 | Employee_1053  |             5 |       1005 | Consultant                | 109679.00 | 2023-02-26 | Active   | employee_1053@example.com |
+|        1054 | Employee_1054  |             6 |       1006 | Senior Analyst            | 117598.00 | 2023-04-04 | Active   | employee_1054@example.com |
+|        1055 | Employee_1055  |             7 |       1007 | Software Engineer         | 125517.00 | 2023-05-11 | Active   | employee_1055@example.com |
+|        1056 | Employee_1056  |             8 |       1008 | Business Analyst          | 133436.00 | 2023-06-17 | Active   | employee_1056@example.com |
+|        1057 | Employee_1057  |             9 |       1009 | Associate Manager         | 141355.00 | 2023-07-24 | Active   | employee_1057@example.com |
+|        1058 | Employee_1058  |            10 |       1010 | Specialist                |  59274.00 | 2023-08-30 | Active   | employee_1058@example.com |
+|        1059 | Employee_1059  |            11 |       1011 | Consultant                |  67193.00 | 2023-10-06 | Active   | employee_1059@example.com |
+|        1060 | Employee_1060  |            12 |       1012 | Senior Analyst            |  75112.00 | 2023-11-12 | Active   | employee_1060@example.com |
+|        1061 | Employee_1061  |             1 |       1001 | Software Engineer         |  83031.00 | 2023-12-19 | Active   | employee_1061@example.com |
+|        1062 | Employee_1062  |             2 |       1002 | Business Analyst          |  90950.00 | 2024-01-25 | Active   | employee_1062@example.com |
+|        1063 | Employee_1063  |             3 |       1003 | Associate Manager         |  98869.00 | 2024-03-02 | Leave    | employee_1063@example.com |
+|        1064 | Employee_1064  |             4 |       1004 | Specialist                | 106788.00 | 2024-04-08 | Inactive | employee_1064@example.com |
+|        1065 | Employee_1065  |             5 |       1005 | Consultant                | 114707.00 | 2024-05-15 | Active   | employee_1065@example.com |
+|        1066 | Employee_1066  |             6 |       1006 | Senior Analyst            | 122626.00 | 2024-06-21 | Active   | employee_1066@example.com |
+|        1067 | Employee_1067  |             7 |       1007 | Software Engineer         | 130545.00 | 2024-07-28 | Active   | employee_1067@example.com |
+|        1068 | Employee_1068  |             8 |       1008 | Business Analyst          | 138464.00 | 2024-09-03 | Active   | employee_1068@example.com |
+|        1069 | Employee_1069  |             9 |       1009 | Associate Manager         |  56383.00 | 2024-10-10 | Active   | employee_1069@example.com |
+|        1070 | Employee_1070  |            10 |       1010 | Specialist                |  64302.00 | 2024-11-16 | Active   | employee_1070@example.com |
+|        1071 | Employee_1071  |            11 |       1011 | Consultant                |  72221.00 | 2024-12-23 | Active   | employee_1071@example.com |
+|        1072 | Employee_1072  |            12 |       1012 | Senior Analyst            |  80140.00 | 2025-01-29 | Active   | employee_1072@example.com |
+|        1073 | Employee_1073  |             1 |       1001 | Software Engineer         |  88059.00 | 2025-03-07 | Active   | employee_1073@example.com |
+|        1074 | Employee_1074  |             2 |       1002 | Business Analyst          |  95978.00 | 2025-04-13 | Active   | employee_1074@example.com |
+|        1075 | Employee_1075  |             3 |       1003 | Associate Manager         | 103897.00 | 2025-05-20 | Active   | employee_1075@example.com |
+|        1076 | Employee_1076  |             4 |       1004 | Specialist                | 111816.00 | 2025-06-26 | Active   | employee_1076@example.com |
+|        1077 | Employee_1077  |             5 |       1005 | Consultant                | 119735.00 | 2025-08-02 | Active   | employee_1077@example.com |
+|        1078 | Employee_1078  |             6 |       1006 | Senior Analyst            | 127654.00 | 2025-09-08 | Active   | employee_1078@example.com |
+|        1079 | Employee_1079  |             7 |       1007 | Software Engineer         | 135573.00 | 2025-10-15 | Active   | employee_1079@example.com |
+|        1080 | Employee_1080  |             8 |       1008 | Business Analyst          | 143492.00 | 2025-11-21 | Leave    | employee_1080@example.com |
+|        1081 | Employee_1081  |             9 |       1009 | Associate Manager         |  61411.00 | 2025-12-28 | Inactive | employee_1081@example.com |
+|        1082 | Employee_1082  |            10 |       1010 | Specialist                |  69330.00 | 2026-02-03 | Active   | employee_1082@example.com |
+|        1083 | Employee_1083  |            11 |       1011 | Consultant                |  77249.00 | 2026-03-12 | Active   | employee_1083@example.com |
+|        1084 | Employee_1084  |            12 |       1012 | Senior Analyst            |  85168.00 | 2026-04-18 | Active   | employee_1084@example.com |
+|        1085 | Employee_1085  |             1 |       1001 | Software Engineer         |  93087.00 | 2019-01-02 | Active   | employee_1085@example.com |
+|        1086 | Employee_1086  |             2 |       1002 | Business Analyst          | 101006.00 | 2019-02-08 | Active   | employee_1086@example.com |
+|        1087 | Employee_1087  |             3 |       1003 | Associate Manager         | 108925.00 | 2019-03-17 | Active   | employee_1087@example.com |
+|        1088 | Employee_1088  |             4 |       1004 | Specialist                | 116844.00 | 2019-04-23 | Active   | employee_1088@example.com |
+|        1089 | Employee_1089  |             5 |       1005 | Consultant                | 124763.00 | 2019-05-30 | Active   | employee_1089@example.com |
+|        1090 | Employee_1090  |             6 |       1006 | Senior Analyst            | 132682.00 | 2019-07-06 | Active   | employee_1090@example.com |
+|        1091 | Employee_1091  |             7 |       1007 | Software Engineer         | 140601.00 | 2019-08-12 | Active   | employee_1091@example.com |
+|        1092 | Employee_1092  |             8 |       1008 | Business Analyst          |  58520.00 | 2019-09-18 | Active   | employee_1092@example.com |
+|        1093 | Employee_1093  |             9 |       1009 | Associate Manager         |  66439.00 | 2019-10-25 | Active   | employee_1093@example.com |
+|        1094 | Employee_1094  |            10 |       1010 | Specialist                |  74358.00 | 2019-12-01 | Active   | employee_1094@example.com |
+|        1095 | Employee_1095  |            11 |       1011 | Consultant                |  82277.00 | 2020-01-07 | Active   | employee_1095@example.com |
+|        1096 | Employee_1096  |            12 |       1012 | Senior Analyst            |  90196.00 | 2020-02-13 | Active   | employee_1096@example.com |
+|        1097 | Employee_1097  |             1 |       1001 | Software Engineer         |  98115.00 | 2020-03-21 | Leave    | employee_1097@example.com |
+|        1098 | Employee_1098  |             2 |       1002 | Business Analyst          | 106034.00 | 2020-04-27 | Inactive | employee_1098@example.com |
+|        1099 | Employee_1099  |             3 |       1003 | Associate Manager         | 113953.00 | 2020-06-03 | Active   | employee_1099@example.com |
+|        1100 | Employee_1100  |             4 |       1004 | Specialist                | 121872.00 | 2020-07-10 | Active   | employee_1100@example.com |
+|        1101 | Employee_1101  |             5 |       1005 | Consultant                | 129791.00 | 2020-08-16 | Active   | employee_1101@example.com |
+|        1102 | Employee_1102  |             6 |       1006 | Senior Analyst            | 137710.00 | 2020-09-22 | Active   | employee_1102@example.com |
+|        1103 | Employee_1103  |             7 |       1007 | Software Engineer         |  55629.00 | 2020-10-29 | Active   | employee_1103@example.com |
+|        1104 | Employee_1104  |             8 |       1008 | Business Analyst          |  63548.00 | 2020-12-05 | Active   | employee_1104@example.com |
+|        1105 | Employee_1105  |             9 |       1009 | Associate Manager         |  71467.00 | 2021-01-11 | Active   | employee_1105@example.com |
+|        1106 | Employee_1106  |            10 |       1010 | Specialist                |  79386.00 | 2021-02-17 | Active   | employee_1106@example.com |
+|        1107 | Employee_1107  |            11 |       1011 | Consultant                |  87305.00 | 2021-03-26 | Active   | employee_1107@example.com |
+|        1108 | Employee_1108  |            12 |       1012 | Senior Analyst            |  95224.00 | 2021-05-02 | Active   | employee_1108@example.com |
+|        1109 | Employee_1109  |             1 |       1001 | Software Engineer         | 103143.00 | 2021-06-08 | Active   | employee_1109@example.com |
+|        1110 | Employee_1110  |             2 |       1002 | Business Analyst          | 111062.00 | 2021-07-15 | Active   | employee_1110@example.com |
+|        1111 | Employee_1111  |             3 |       1003 | Associate Manager         | 118981.00 | 2021-08-21 | Active   | employee_1111@example.com |
+|        1112 | Employee_1112  |             4 |       1004 | Specialist                | 126900.00 | 2021-09-27 | Active   | employee_1112@example.com |
+|        1113 | Employee_1113  |             5 |       1005 | Consultant                | 134819.00 | 2021-11-03 | Active   | employee_1113@example.com |
+|        1114 | Employee_1114  |             6 |       1006 | Senior Analyst            | 142738.00 | 2021-12-10 | Leave    | employee_1114@example.com |
+|        1115 | Employee_1115  |             7 |       1007 | Software Engineer         |  60657.00 | 2022-01-16 | Inactive | employee_1115@example.com |
+|        1116 | Employee_1116  |             8 |       1008 | Business Analyst          |  68576.00 | 2022-02-22 | Active   | employee_1116@example.com |
+|        1117 | Employee_1117  |             9 |       1009 | Associate Manager         |  76495.00 | 2022-03-31 | Active   | employee_1117@example.com |
+|        1118 | Employee_1118  |            10 |       1010 | Specialist                |  84414.00 | 2022-05-07 | Active   | employee_1118@example.com |
+|        1119 | Employee_1119  |            11 |       1011 | Consultant                |  92333.00 | 2022-06-13 | Active   | employee_1119@example.com |
+|        1120 | Employee_1120  |            12 |       1012 | Senior Analyst            | 100252.00 | 2022-07-20 | Active   | employee_1120@example.com |
++-------------+----------------+---------------+------------+---------------------------+-----------+------------+----------+---------------------------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        salary,
+    ->        salary * 12 AS annual_salary
+    -> FROM employees;
++----------------+-----------+---------------+
+| employee_name  | salary    | annual_salary |
++----------------+-----------+---------------+
+| Aarav Kulkarni | 185000.00 |    2220000.00 |
+| Isha Mehta     | 172000.00 |    2064000.00 |
+| Rohan Shah     | 165000.00 |    1980000.00 |
+| Neha Patil     | 145000.00 |    1740000.00 |
+| Vikram Rao     | 178000.00 |    2136000.00 |
+| Sana Khan      | 158000.00 |    1896000.00 |
+| Aditya Nair    | 160000.00 |    1920000.00 |
+| Priya Deshmukh | 150000.00 |    1800000.00 |
+| Kunal Joshi    | 175000.00 |    2100000.00 |
+| Meera Iyer     | 168000.00 |    2016000.00 |
+| Sameer Gupta   | 138000.00 |    1656000.00 |
+| Tanya Singh    | 155000.00 |    1860000.00 |
+| Employee_1013  |  62919.00 |     755028.00 |
+| Employee_1014  |  70838.00 |     850056.00 |
+| Employee_1015  |  78757.00 |     945084.00 |
+| Employee_1016  |  86676.00 |    1040112.00 |
+| Employee_1017  |  94595.00 |    1135140.00 |
+| Employee_1018  | 102514.00 |    1230168.00 |
+| Employee_1019  | 110433.00 |    1325196.00 |
+| Employee_1020  | 118352.00 |    1420224.00 |
+| Employee_1021  | 126271.00 |    1515252.00 |
+| Employee_1022  | 134190.00 |    1610280.00 |
+| Employee_1023  | 142109.00 |    1705308.00 |
+| Employee_1024  |  60028.00 |     720336.00 |
+| Employee_1025  |  67947.00 |     815364.00 |
+| Employee_1026  |  75866.00 |     910392.00 |
+| Employee_1027  |  83785.00 |    1005420.00 |
+| Employee_1028  |  91704.00 |    1100448.00 |
+| Employee_1029  |  99623.00 |    1195476.00 |
+| Employee_1030  | 107542.00 |    1290504.00 |
+| Employee_1031  | 115461.00 |    1385532.00 |
+| Employee_1032  | 123380.00 |    1480560.00 |
+| Employee_1033  | 131299.00 |    1575588.00 |
+| Employee_1034  | 139218.00 |    1670616.00 |
+| Employee_1035  |  57137.00 |     685644.00 |
+| Employee_1036  |  65056.00 |     780672.00 |
+| Employee_1037  |  72975.00 |     875700.00 |
+| Employee_1038  |  80894.00 |     970728.00 |
+| Employee_1039  |  88813.00 |    1065756.00 |
+| Employee_1040  |  96732.00 |    1160784.00 |
+| Employee_1041  | 104651.00 |    1255812.00 |
+| Employee_1042  | 112570.00 |    1350840.00 |
+| Employee_1043  | 120489.00 |    1445868.00 |
+| Employee_1044  | 128408.00 |    1540896.00 |
+| Employee_1045  | 136327.00 |    1635924.00 |
+| Employee_1046  | 144246.00 |    1730952.00 |
+| Employee_1047  |  62165.00 |     745980.00 |
+| Employee_1048  |  70084.00 |     841008.00 |
+| Employee_1049  |  78003.00 |     936036.00 |
+| Employee_1050  |  85922.00 |    1031064.00 |
+| Employee_1051  |  93841.00 |    1126092.00 |
+| Employee_1052  | 101760.00 |    1221120.00 |
+| Employee_1053  | 109679.00 |    1316148.00 |
+| Employee_1054  | 117598.00 |    1411176.00 |
+| Employee_1055  | 125517.00 |    1506204.00 |
+| Employee_1056  | 133436.00 |    1601232.00 |
+| Employee_1057  | 141355.00 |    1696260.00 |
+| Employee_1058  |  59274.00 |     711288.00 |
+| Employee_1059  |  67193.00 |     806316.00 |
+| Employee_1060  |  75112.00 |     901344.00 |
+| Employee_1061  |  83031.00 |     996372.00 |
+| Employee_1062  |  90950.00 |    1091400.00 |
+| Employee_1063  |  98869.00 |    1186428.00 |
+| Employee_1064  | 106788.00 |    1281456.00 |
+| Employee_1065  | 114707.00 |    1376484.00 |
+| Employee_1066  | 122626.00 |    1471512.00 |
+| Employee_1067  | 130545.00 |    1566540.00 |
+| Employee_1068  | 138464.00 |    1661568.00 |
+| Employee_1069  |  56383.00 |     676596.00 |
+| Employee_1070  |  64302.00 |     771624.00 |
+| Employee_1071  |  72221.00 |     866652.00 |
+| Employee_1072  |  80140.00 |     961680.00 |
+| Employee_1073  |  88059.00 |    1056708.00 |
+| Employee_1074  |  95978.00 |    1151736.00 |
+| Employee_1075  | 103897.00 |    1246764.00 |
+| Employee_1076  | 111816.00 |    1341792.00 |
+| Employee_1077  | 119735.00 |    1436820.00 |
+| Employee_1078  | 127654.00 |    1531848.00 |
+| Employee_1079  | 135573.00 |    1626876.00 |
+| Employee_1080  | 143492.00 |    1721904.00 |
+| Employee_1081  |  61411.00 |     736932.00 |
+| Employee_1082  |  69330.00 |     831960.00 |
+| Employee_1083  |  77249.00 |     926988.00 |
+| Employee_1084  |  85168.00 |    1022016.00 |
+| Employee_1085  |  93087.00 |    1117044.00 |
+| Employee_1086  | 101006.00 |    1212072.00 |
+| Employee_1087  | 108925.00 |    1307100.00 |
+| Employee_1088  | 116844.00 |    1402128.00 |
+| Employee_1089  | 124763.00 |    1497156.00 |
+| Employee_1090  | 132682.00 |    1592184.00 |
+| Employee_1091  | 140601.00 |    1687212.00 |
+| Employee_1092  |  58520.00 |     702240.00 |
+| Employee_1093  |  66439.00 |     797268.00 |
+| Employee_1094  |  74358.00 |     892296.00 |
+| Employee_1095  |  82277.00 |     987324.00 |
+| Employee_1096  |  90196.00 |    1082352.00 |
+| Employee_1097  |  98115.00 |    1177380.00 |
+| Employee_1098  | 106034.00 |    1272408.00 |
+| Employee_1099  | 113953.00 |    1367436.00 |
+| Employee_1100  | 121872.00 |    1462464.00 |
+| Employee_1101  | 129791.00 |    1557492.00 |
+| Employee_1102  | 137710.00 |    1652520.00 |
+| Employee_1103  |  55629.00 |     667548.00 |
+| Employee_1104  |  63548.00 |     762576.00 |
+| Employee_1105  |  71467.00 |     857604.00 |
+| Employee_1106  |  79386.00 |     952632.00 |
+| Employee_1107  |  87305.00 |    1047660.00 |
+| Employee_1108  |  95224.00 |    1142688.00 |
+| Employee_1109  | 103143.00 |    1237716.00 |
+| Employee_1110  | 111062.00 |    1332744.00 |
+| Employee_1111  | 118981.00 |    1427772.00 |
+| Employee_1112  | 126900.00 |    1522800.00 |
+| Employee_1113  | 134819.00 |    1617828.00 |
+| Employee_1114  | 142738.00 |    1712856.00 |
+| Employee_1115  |  60657.00 |     727884.00 |
+| Employee_1116  |  68576.00 |     822912.00 |
+| Employee_1117  |  76495.00 |     917940.00 |
+| Employee_1118  |  84414.00 |    1012968.00 |
+| Employee_1119  |  92333.00 |    1107996.00 |
+| Employee_1120  | 100252.00 |    1203024.00 |
++----------------+-----------+---------------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT employee_name, job_title, salary
+    -> FROM employees;
++----------------+---------------------------+-----------+
+| employee_name  | job_title                 | salary    |
++----------------+---------------------------+-----------+
+| Aarav Kulkarni | VP Engineering            | 185000.00 |
+| Isha Mehta     | Head of Analytics         | 172000.00 |
+| Rohan Shah     | Finance Director          | 165000.00 |
+| Neha Patil     | HR Director               | 145000.00 |
+| Vikram Rao     | Sales Director            | 178000.00 |
+| Sana Khan      | Marketing Director        | 158000.00 |
+| Aditya Nair    | Operations Director       | 160000.00 |
+| Priya Deshmukh | Customer Success Director | 150000.00 |
+| Kunal Joshi    | Product Director          | 175000.00 |
+| Meera Iyer     | Security Director         | 168000.00 |
+| Sameer Gupta   | Procurement Director      | 138000.00 |
+| Tanya Singh    | Legal Director            | 155000.00 |
+| Employee_1013  | Software Engineer         |  62919.00 |
+| Employee_1014  | Business Analyst          |  70838.00 |
+| Employee_1015  | Associate Manager         |  78757.00 |
+| Employee_1016  | Specialist                |  86676.00 |
+| Employee_1017  | Consultant                |  94595.00 |
+| Employee_1018  | Senior Analyst            | 102514.00 |
+| Employee_1019  | Software Engineer         | 110433.00 |
+| Employee_1020  | Business Analyst          | 118352.00 |
+| Employee_1021  | Associate Manager         | 126271.00 |
+| Employee_1022  | Specialist                | 134190.00 |
+| Employee_1023  | Consultant                | 142109.00 |
+| Employee_1024  | Senior Analyst            |  60028.00 |
+| Employee_1025  | Software Engineer         |  67947.00 |
+| Employee_1026  | Business Analyst          |  75866.00 |
+| Employee_1027  | Associate Manager         |  83785.00 |
+| Employee_1028  | Specialist                |  91704.00 |
+| Employee_1029  | Consultant                |  99623.00 |
+| Employee_1030  | Senior Analyst            | 107542.00 |
+| Employee_1031  | Software Engineer         | 115461.00 |
+| Employee_1032  | Business Analyst          | 123380.00 |
+| Employee_1033  | Associate Manager         | 131299.00 |
+| Employee_1034  | Specialist                | 139218.00 |
+| Employee_1035  | Consultant                |  57137.00 |
+| Employee_1036  | Senior Analyst            |  65056.00 |
+| Employee_1037  | Software Engineer         |  72975.00 |
+| Employee_1038  | Business Analyst          |  80894.00 |
+| Employee_1039  | Associate Manager         |  88813.00 |
+| Employee_1040  | Specialist                |  96732.00 |
+| Employee_1041  | Consultant                | 104651.00 |
+| Employee_1042  | Senior Analyst            | 112570.00 |
+| Employee_1043  | Software Engineer         | 120489.00 |
+| Employee_1044  | Business Analyst          | 128408.00 |
+| Employee_1045  | Associate Manager         | 136327.00 |
+| Employee_1046  | Specialist                | 144246.00 |
+| Employee_1047  | Consultant                |  62165.00 |
+| Employee_1048  | Senior Analyst            |  70084.00 |
+| Employee_1049  | Software Engineer         |  78003.00 |
+| Employee_1050  | Business Analyst          |  85922.00 |
+| Employee_1051  | Associate Manager         |  93841.00 |
+| Employee_1052  | Specialist                | 101760.00 |
+| Employee_1053  | Consultant                | 109679.00 |
+| Employee_1054  | Senior Analyst            | 117598.00 |
+| Employee_1055  | Software Engineer         | 125517.00 |
+| Employee_1056  | Business Analyst          | 133436.00 |
+| Employee_1057  | Associate Manager         | 141355.00 |
+| Employee_1058  | Specialist                |  59274.00 |
+| Employee_1059  | Consultant                |  67193.00 |
+| Employee_1060  | Senior Analyst            |  75112.00 |
+| Employee_1061  | Software Engineer         |  83031.00 |
+| Employee_1062  | Business Analyst          |  90950.00 |
+| Employee_1063  | Associate Manager         |  98869.00 |
+| Employee_1064  | Specialist                | 106788.00 |
+| Employee_1065  | Consultant                | 114707.00 |
+| Employee_1066  | Senior Analyst            | 122626.00 |
+| Employee_1067  | Software Engineer         | 130545.00 |
+| Employee_1068  | Business Analyst          | 138464.00 |
+| Employee_1069  | Associate Manager         |  56383.00 |
+| Employee_1070  | Specialist                |  64302.00 |
+| Employee_1071  | Consultant                |  72221.00 |
+| Employee_1072  | Senior Analyst            |  80140.00 |
+| Employee_1073  | Software Engineer         |  88059.00 |
+| Employee_1074  | Business Analyst          |  95978.00 |
+| Employee_1075  | Associate Manager         | 103897.00 |
+| Employee_1076  | Specialist                | 111816.00 |
+| Employee_1077  | Consultant                | 119735.00 |
+| Employee_1078  | Senior Analyst            | 127654.00 |
+| Employee_1079  | Software Engineer         | 135573.00 |
+| Employee_1080  | Business Analyst          | 143492.00 |
+| Employee_1081  | Associate Manager         |  61411.00 |
+| Employee_1082  | Specialist                |  69330.00 |
+| Employee_1083  | Consultant                |  77249.00 |
+| Employee_1084  | Senior Analyst            |  85168.00 |
+| Employee_1085  | Software Engineer         |  93087.00 |
+| Employee_1086  | Business Analyst          | 101006.00 |
+| Employee_1087  | Associate Manager         | 108925.00 |
+| Employee_1088  | Specialist                | 116844.00 |
+| Employee_1089  | Consultant                | 124763.00 |
+| Employee_1090  | Senior Analyst            | 132682.00 |
+| Employee_1091  | Software Engineer         | 140601.00 |
+| Employee_1092  | Business Analyst          |  58520.00 |
+| Employee_1093  | Associate Manager         |  66439.00 |
+| Employee_1094  | Specialist                |  74358.00 |
+| Employee_1095  | Consultant                |  82277.00 |
+| Employee_1096  | Senior Analyst            |  90196.00 |
+| Employee_1097  | Software Engineer         |  98115.00 |
+| Employee_1098  | Business Analyst          | 106034.00 |
+| Employee_1099  | Associate Manager         | 113953.00 |
+| Employee_1100  | Specialist                | 121872.00 |
+| Employee_1101  | Consultant                | 129791.00 |
+| Employee_1102  | Senior Analyst            | 137710.00 |
+| Employee_1103  | Software Engineer         |  55629.00 |
+| Employee_1104  | Business Analyst          |  63548.00 |
+| Employee_1105  | Associate Manager         |  71467.00 |
+| Employee_1106  | Specialist                |  79386.00 |
+| Employee_1107  | Consultant                |  87305.00 |
+| Employee_1108  | Senior Analyst            |  95224.00 |
+| Employee_1109  | Software Engineer         | 103143.00 |
+| Employee_1110  | Business Analyst          | 111062.00 |
+| Employee_1111  | Associate Manager         | 118981.00 |
+| Employee_1112  | Specialist                | 126900.00 |
+| Employee_1113  | Consultant                | 134819.00 |
+| Employee_1114  | Senior Analyst            | 142738.00 |
+| Employee_1115  | Software Engineer         |  60657.00 |
+| Employee_1116  | Business Analyst          |  68576.00 |
+| Employee_1117  | Associate Manager         |  76495.00 |
+| Employee_1118  | Specialist                |  84414.00 |
+| Employee_1119  | Consultant                |  92333.00 |
+| Employee_1120  | Senior Analyst            | 100252.00 |
++----------------+---------------------------+-----------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        salary,
+    ->        salary * 12 AS annual_salary
+    -> FROM employees;
++----------------+-----------+---------------+
+| employee_name  | salary    | annual_salary |
++----------------+-----------+---------------+
+| Aarav Kulkarni | 185000.00 |    2220000.00 |
+| Isha Mehta     | 172000.00 |    2064000.00 |
+| Rohan Shah     | 165000.00 |    1980000.00 |
+| Neha Patil     | 145000.00 |    1740000.00 |
+| Vikram Rao     | 178000.00 |    2136000.00 |
+| Sana Khan      | 158000.00 |    1896000.00 |
+| Aditya Nair    | 160000.00 |    1920000.00 |
+| Priya Deshmukh | 150000.00 |    1800000.00 |
+| Kunal Joshi    | 175000.00 |    2100000.00 |
+| Meera Iyer     | 168000.00 |    2016000.00 |
+| Sameer Gupta   | 138000.00 |    1656000.00 |
+| Tanya Singh    | 155000.00 |    1860000.00 |
+| Employee_1013  |  62919.00 |     755028.00 |
+| Employee_1014  |  70838.00 |     850056.00 |
+| Employee_1015  |  78757.00 |     945084.00 |
+| Employee_1016  |  86676.00 |    1040112.00 |
+| Employee_1017  |  94595.00 |    1135140.00 |
+| Employee_1018  | 102514.00 |    1230168.00 |
+| Employee_1019  | 110433.00 |    1325196.00 |
+| Employee_1020  | 118352.00 |    1420224.00 |
+| Employee_1021  | 126271.00 |    1515252.00 |
+| Employee_1022  | 134190.00 |    1610280.00 |
+| Employee_1023  | 142109.00 |    1705308.00 |
+| Employee_1024  |  60028.00 |     720336.00 |
+| Employee_1025  |  67947.00 |     815364.00 |
+| Employee_1026  |  75866.00 |     910392.00 |
+| Employee_1027  |  83785.00 |    1005420.00 |
+| Employee_1028  |  91704.00 |    1100448.00 |
+| Employee_1029  |  99623.00 |    1195476.00 |
+| Employee_1030  | 107542.00 |    1290504.00 |
+| Employee_1031  | 115461.00 |    1385532.00 |
+| Employee_1032  | 123380.00 |    1480560.00 |
+| Employee_1033  | 131299.00 |    1575588.00 |
+| Employee_1034  | 139218.00 |    1670616.00 |
+| Employee_1035  |  57137.00 |     685644.00 |
+| Employee_1036  |  65056.00 |     780672.00 |
+| Employee_1037  |  72975.00 |     875700.00 |
+| Employee_1038  |  80894.00 |     970728.00 |
+| Employee_1039  |  88813.00 |    1065756.00 |
+| Employee_1040  |  96732.00 |    1160784.00 |
+| Employee_1041  | 104651.00 |    1255812.00 |
+| Employee_1042  | 112570.00 |    1350840.00 |
+| Employee_1043  | 120489.00 |    1445868.00 |
+| Employee_1044  | 128408.00 |    1540896.00 |
+| Employee_1045  | 136327.00 |    1635924.00 |
+| Employee_1046  | 144246.00 |    1730952.00 |
+| Employee_1047  |  62165.00 |     745980.00 |
+| Employee_1048  |  70084.00 |     841008.00 |
+| Employee_1049  |  78003.00 |     936036.00 |
+| Employee_1050  |  85922.00 |    1031064.00 |
+| Employee_1051  |  93841.00 |    1126092.00 |
+| Employee_1052  | 101760.00 |    1221120.00 |
+| Employee_1053  | 109679.00 |    1316148.00 |
+| Employee_1054  | 117598.00 |    1411176.00 |
+| Employee_1055  | 125517.00 |    1506204.00 |
+| Employee_1056  | 133436.00 |    1601232.00 |
+| Employee_1057  | 141355.00 |    1696260.00 |
+| Employee_1058  |  59274.00 |     711288.00 |
+| Employee_1059  |  67193.00 |     806316.00 |
+| Employee_1060  |  75112.00 |     901344.00 |
+| Employee_1061  |  83031.00 |     996372.00 |
+| Employee_1062  |  90950.00 |    1091400.00 |
+| Employee_1063  |  98869.00 |    1186428.00 |
+| Employee_1064  | 106788.00 |    1281456.00 |
+| Employee_1065  | 114707.00 |    1376484.00 |
+| Employee_1066  | 122626.00 |    1471512.00 |
+| Employee_1067  | 130545.00 |    1566540.00 |
+| Employee_1068  | 138464.00 |    1661568.00 |
+| Employee_1069  |  56383.00 |     676596.00 |
+| Employee_1070  |  64302.00 |     771624.00 |
+| Employee_1071  |  72221.00 |     866652.00 |
+| Employee_1072  |  80140.00 |     961680.00 |
+| Employee_1073  |  88059.00 |    1056708.00 |
+| Employee_1074  |  95978.00 |    1151736.00 |
+| Employee_1075  | 103897.00 |    1246764.00 |
+| Employee_1076  | 111816.00 |    1341792.00 |
+| Employee_1077  | 119735.00 |    1436820.00 |
+| Employee_1078  | 127654.00 |    1531848.00 |
+| Employee_1079  | 135573.00 |    1626876.00 |
+| Employee_1080  | 143492.00 |    1721904.00 |
+| Employee_1081  |  61411.00 |     736932.00 |
+| Employee_1082  |  69330.00 |     831960.00 |
+| Employee_1083  |  77249.00 |     926988.00 |
+| Employee_1084  |  85168.00 |    1022016.00 |
+| Employee_1085  |  93087.00 |    1117044.00 |
+| Employee_1086  | 101006.00 |    1212072.00 |
+| Employee_1087  | 108925.00 |    1307100.00 |
+| Employee_1088  | 116844.00 |    1402128.00 |
+| Employee_1089  | 124763.00 |    1497156.00 |
+| Employee_1090  | 132682.00 |    1592184.00 |
+| Employee_1091  | 140601.00 |    1687212.00 |
+| Employee_1092  |  58520.00 |     702240.00 |
+| Employee_1093  |  66439.00 |     797268.00 |
+| Employee_1094  |  74358.00 |     892296.00 |
+| Employee_1095  |  82277.00 |     987324.00 |
+| Employee_1096  |  90196.00 |    1082352.00 |
+| Employee_1097  |  98115.00 |    1177380.00 |
+| Employee_1098  | 106034.00 |    1272408.00 |
+| Employee_1099  | 113953.00 |    1367436.00 |
+| Employee_1100  | 121872.00 |    1462464.00 |
+| Employee_1101  | 129791.00 |    1557492.00 |
+| Employee_1102  | 137710.00 |    1652520.00 |
+| Employee_1103  |  55629.00 |     667548.00 |
+| Employee_1104  |  63548.00 |     762576.00 |
+| Employee_1105  |  71467.00 |     857604.00 |
+| Employee_1106  |  79386.00 |     952632.00 |
+| Employee_1107  |  87305.00 |    1047660.00 |
+| Employee_1108  |  95224.00 |    1142688.00 |
+| Employee_1109  | 103143.00 |    1237716.00 |
+| Employee_1110  | 111062.00 |    1332744.00 |
+| Employee_1111  | 118981.00 |    1427772.00 |
+| Employee_1112  | 126900.00 |    1522800.00 |
+| Employee_1113  | 134819.00 |    1617828.00 |
+| Employee_1114  | 142738.00 |    1712856.00 |
+| Employee_1115  |  60657.00 |     727884.00 |
+| Employee_1116  |  68576.00 |     822912.00 |
+| Employee_1117  |  76495.00 |     917940.00 |
+| Employee_1118  |  84414.00 |    1012968.00 |
+| Employee_1119  |  92333.00 |    1107996.00 |
+| Employee_1120  | 100252.00 |    1203024.00 |
++----------------+-----------+---------------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT department_id
+    -> FROM employees
+    -> ORDER BY department_id;
++---------------+
+| department_id |
++---------------+
+|             1 |
+|             2 |
+|             3 |
+|             4 |
+|             5 |
+|             6 |
+|             7 |
+|             8 |
+|             9 |
+|            10 |
+|            11 |
+|            12 |
++---------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT department_id, status
+    -> FROM employees
+    -> ORDER BY department_id, status;
++---------------+----------+
+| department_id | status   |
++---------------+----------+
+|             1 | Active   |
+|             1 | Inactive |
+|             1 | Leave    |
+|             2 | Active   |
+|             2 | Inactive |
+|             3 | Active   |
+|             3 | Leave    |
+|             4 | Active   |
+|             4 | Inactive |
+|             5 | Active   |
+|             5 | Leave    |
+|             6 | Active   |
+|             6 | Inactive |
+|             6 | Leave    |
+|             7 | Active   |
+|             7 | Inactive |
+|             8 | Active   |
+|             8 | Leave    |
+|             9 | Active   |
+|             9 | Inactive |
+|            10 | Active   |
+|            10 | Leave    |
+|            11 | Active   |
+|            11 | Inactive |
+|            12 | Active   |
++---------------+----------+
+25 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT status
+    -> FROM employees;
++----------+
+| status   |
++----------+
+| Active   |
+| Inactive |
+| Leave    |
++----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name, salary
+    -> FROM employees
+    -> WHERE salary >= 100000;
++-------------+----------------+-----------+
+| employee_id | employee_name  | salary    |
++-------------+----------------+-----------+
+|        1001 | Aarav Kulkarni | 185000.00 |
+|        1002 | Isha Mehta     | 172000.00 |
+|        1003 | Rohan Shah     | 165000.00 |
+|        1004 | Neha Patil     | 145000.00 |
+|        1005 | Vikram Rao     | 178000.00 |
+|        1006 | Sana Khan      | 158000.00 |
+|        1007 | Aditya Nair    | 160000.00 |
+|        1008 | Priya Deshmukh | 150000.00 |
+|        1009 | Kunal Joshi    | 175000.00 |
+|        1010 | Meera Iyer     | 168000.00 |
+|        1011 | Sameer Gupta   | 138000.00 |
+|        1012 | Tanya Singh    | 155000.00 |
+|        1018 | Employee_1018  | 102514.00 |
+|        1019 | Employee_1019  | 110433.00 |
+|        1020 | Employee_1020  | 118352.00 |
+|        1021 | Employee_1021  | 126271.00 |
+|        1022 | Employee_1022  | 134190.00 |
+|        1023 | Employee_1023  | 142109.00 |
+|        1030 | Employee_1030  | 107542.00 |
+|        1031 | Employee_1031  | 115461.00 |
+|        1032 | Employee_1032  | 123380.00 |
+|        1033 | Employee_1033  | 131299.00 |
+|        1034 | Employee_1034  | 139218.00 |
+|        1041 | Employee_1041  | 104651.00 |
+|        1042 | Employee_1042  | 112570.00 |
+|        1043 | Employee_1043  | 120489.00 |
+|        1044 | Employee_1044  | 128408.00 |
+|        1045 | Employee_1045  | 136327.00 |
+|        1046 | Employee_1046  | 144246.00 |
+|        1052 | Employee_1052  | 101760.00 |
+|        1053 | Employee_1053  | 109679.00 |
+|        1054 | Employee_1054  | 117598.00 |
+|        1055 | Employee_1055  | 125517.00 |
+|        1056 | Employee_1056  | 133436.00 |
+|        1057 | Employee_1057  | 141355.00 |
+|        1064 | Employee_1064  | 106788.00 |
+|        1065 | Employee_1065  | 114707.00 |
+|        1066 | Employee_1066  | 122626.00 |
+|        1067 | Employee_1067  | 130545.00 |
+|        1068 | Employee_1068  | 138464.00 |
+|        1075 | Employee_1075  | 103897.00 |
+|        1076 | Employee_1076  | 111816.00 |
+|        1077 | Employee_1077  | 119735.00 |
+|        1078 | Employee_1078  | 127654.00 |
+|        1079 | Employee_1079  | 135573.00 |
+|        1080 | Employee_1080  | 143492.00 |
+|        1086 | Employee_1086  | 101006.00 |
+|        1087 | Employee_1087  | 108925.00 |
+|        1088 | Employee_1088  | 116844.00 |
+|        1089 | Employee_1089  | 124763.00 |
+|        1090 | Employee_1090  | 132682.00 |
+|        1091 | Employee_1091  | 140601.00 |
+|        1098 | Employee_1098  | 106034.00 |
+|        1099 | Employee_1099  | 113953.00 |
+|        1100 | Employee_1100  | 121872.00 |
+|        1101 | Employee_1101  | 129791.00 |
+|        1102 | Employee_1102  | 137710.00 |
+|        1109 | Employee_1109  | 103143.00 |
+|        1110 | Employee_1110  | 111062.00 |
+|        1111 | Employee_1111  | 118981.00 |
+|        1112 | Employee_1112  | 126900.00 |
+|        1113 | Employee_1113  | 134819.00 |
+|        1114 | Employee_1114  | 142738.00 |
+|        1120 | Employee_1120  | 100252.00 |
++-------------+----------------+-----------+
+64 rows in set (0.01 sec)
+
+mysql> WHERE salary >= 850000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE salary >= 850000' at line 1
+mysql> WHERE salary >= 850000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE salary >= 850000' at line 1
+mysql> WHERE salary >= 90000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE salary >= 90000' at line 1
+mysql> WHERE salary >= 850000;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE salary >= 850000' at line 1
+mysql> SELECT employee_id, employee_name, salary
+    -> FROM employees
+    -> WHERE salary >= 85000;
++-------------+----------------+-----------+
+| employee_id | employee_name  | salary    |
++-------------+----------------+-----------+
+|        1001 | Aarav Kulkarni | 185000.00 |
+|        1002 | Isha Mehta     | 172000.00 |
+|        1003 | Rohan Shah     | 165000.00 |
+|        1004 | Neha Patil     | 145000.00 |
+|        1005 | Vikram Rao     | 178000.00 |
+|        1006 | Sana Khan      | 158000.00 |
+|        1007 | Aditya Nair    | 160000.00 |
+|        1008 | Priya Deshmukh | 150000.00 |
+|        1009 | Kunal Joshi    | 175000.00 |
+|        1010 | Meera Iyer     | 168000.00 |
+|        1011 | Sameer Gupta   | 138000.00 |
+|        1012 | Tanya Singh    | 155000.00 |
+|        1016 | Employee_1016  |  86676.00 |
+|        1017 | Employee_1017  |  94595.00 |
+|        1018 | Employee_1018  | 102514.00 |
+|        1019 | Employee_1019  | 110433.00 |
+|        1020 | Employee_1020  | 118352.00 |
+|        1021 | Employee_1021  | 126271.00 |
+|        1022 | Employee_1022  | 134190.00 |
+|        1023 | Employee_1023  | 142109.00 |
+|        1028 | Employee_1028  |  91704.00 |
+|        1029 | Employee_1029  |  99623.00 |
+|        1030 | Employee_1030  | 107542.00 |
+|        1031 | Employee_1031  | 115461.00 |
+|        1032 | Employee_1032  | 123380.00 |
+|        1033 | Employee_1033  | 131299.00 |
+|        1034 | Employee_1034  | 139218.00 |
+|        1039 | Employee_1039  |  88813.00 |
+|        1040 | Employee_1040  |  96732.00 |
+|        1041 | Employee_1041  | 104651.00 |
+|        1042 | Employee_1042  | 112570.00 |
+|        1043 | Employee_1043  | 120489.00 |
+|        1044 | Employee_1044  | 128408.00 |
+|        1045 | Employee_1045  | 136327.00 |
+|        1046 | Employee_1046  | 144246.00 |
+|        1050 | Employee_1050  |  85922.00 |
+|        1051 | Employee_1051  |  93841.00 |
+|        1052 | Employee_1052  | 101760.00 |
+|        1053 | Employee_1053  | 109679.00 |
+|        1054 | Employee_1054  | 117598.00 |
+|        1055 | Employee_1055  | 125517.00 |
+|        1056 | Employee_1056  | 133436.00 |
+|        1057 | Employee_1057  | 141355.00 |
+|        1062 | Employee_1062  |  90950.00 |
+|        1063 | Employee_1063  |  98869.00 |
+|        1064 | Employee_1064  | 106788.00 |
+|        1065 | Employee_1065  | 114707.00 |
+|        1066 | Employee_1066  | 122626.00 |
+|        1067 | Employee_1067  | 130545.00 |
+|        1068 | Employee_1068  | 138464.00 |
+|        1073 | Employee_1073  |  88059.00 |
+|        1074 | Employee_1074  |  95978.00 |
+|        1075 | Employee_1075  | 103897.00 |
+|        1076 | Employee_1076  | 111816.00 |
+|        1077 | Employee_1077  | 119735.00 |
+|        1078 | Employee_1078  | 127654.00 |
+|        1079 | Employee_1079  | 135573.00 |
+|        1080 | Employee_1080  | 143492.00 |
+|        1084 | Employee_1084  |  85168.00 |
+|        1085 | Employee_1085  |  93087.00 |
+|        1086 | Employee_1086  | 101006.00 |
+|        1087 | Employee_1087  | 108925.00 |
+|        1088 | Employee_1088  | 116844.00 |
+|        1089 | Employee_1089  | 124763.00 |
+|        1090 | Employee_1090  | 132682.00 |
+|        1091 | Employee_1091  | 140601.00 |
+|        1096 | Employee_1096  |  90196.00 |
+|        1097 | Employee_1097  |  98115.00 |
+|        1098 | Employee_1098  | 106034.00 |
+|        1099 | Employee_1099  | 113953.00 |
+|        1100 | Employee_1100  | 121872.00 |
+|        1101 | Employee_1101  | 129791.00 |
+|        1102 | Employee_1102  | 137710.00 |
+|        1107 | Employee_1107  |  87305.00 |
+|        1108 | Employee_1108  |  95224.00 |
+|        1109 | Employee_1109  | 103143.00 |
+|        1110 | Employee_1110  | 111062.00 |
+|        1111 | Employee_1111  | 118981.00 |
+|        1112 | Employee_1112  | 126900.00 |
+|        1113 | Employee_1113  | 134819.00 |
+|        1114 | Employee_1114  | 142738.00 |
+|        1119 | Employee_1119  |  92333.00 |
+|        1120 | Employee_1120  | 100252.00 |
++-------------+----------------+-----------+
+83 rows in set (0.00 sec)
+
+mysql> SELECT employee_name, department_id, salary
+    -> FROM employees
+    -> WHERE department_id = 1
+    ->   AND salary >= 100000;
++----------------+---------------+-----------+
+| employee_name  | department_id | salary    |
++----------------+---------------+-----------+
+| Aarav Kulkarni |             1 | 185000.00 |
+| Employee_1109  |             1 | 103143.00 |
++----------------+---------------+-----------+
+2 rows in set (0.01 sec)
+
+mysql>
+mysql> SELECT employee_name, department_id, salary
+    -> FROM employees
+    -> WHERE department_id = 1
+    ->   OR salary >= 100000;
++----------------+---------------+-----------+
+| employee_name  | department_id | salary    |
++----------------+---------------+-----------+
+| Aarav Kulkarni |             1 | 185000.00 |
+| Isha Mehta     |             2 | 172000.00 |
+| Rohan Shah     |             3 | 165000.00 |
+| Neha Patil     |             4 | 145000.00 |
+| Vikram Rao     |             5 | 178000.00 |
+| Sana Khan      |             6 | 158000.00 |
+| Aditya Nair    |             7 | 160000.00 |
+| Priya Deshmukh |             8 | 150000.00 |
+| Kunal Joshi    |             9 | 175000.00 |
+| Meera Iyer     |            10 | 168000.00 |
+| Sameer Gupta   |            11 | 138000.00 |
+| Tanya Singh    |            12 | 155000.00 |
+| Employee_1013  |             1 |  62919.00 |
+| Employee_1018  |             6 | 102514.00 |
+| Employee_1019  |             7 | 110433.00 |
+| Employee_1020  |             8 | 118352.00 |
+| Employee_1021  |             9 | 126271.00 |
+| Employee_1022  |            10 | 134190.00 |
+| Employee_1023  |            11 | 142109.00 |
+| Employee_1025  |             1 |  67947.00 |
+| Employee_1030  |             6 | 107542.00 |
+| Employee_1031  |             7 | 115461.00 |
+| Employee_1032  |             8 | 123380.00 |
+| Employee_1033  |             9 | 131299.00 |
+| Employee_1034  |            10 | 139218.00 |
+| Employee_1037  |             1 |  72975.00 |
+| Employee_1041  |             5 | 104651.00 |
+| Employee_1042  |             6 | 112570.00 |
+| Employee_1043  |             7 | 120489.00 |
+| Employee_1044  |             8 | 128408.00 |
+| Employee_1045  |             9 | 136327.00 |
+| Employee_1046  |            10 | 144246.00 |
+| Employee_1049  |             1 |  78003.00 |
+| Employee_1052  |             4 | 101760.00 |
+| Employee_1053  |             5 | 109679.00 |
+| Employee_1054  |             6 | 117598.00 |
+| Employee_1055  |             7 | 125517.00 |
+| Employee_1056  |             8 | 133436.00 |
+| Employee_1057  |             9 | 141355.00 |
+| Employee_1061  |             1 |  83031.00 |
+| Employee_1064  |             4 | 106788.00 |
+| Employee_1065  |             5 | 114707.00 |
+| Employee_1066  |             6 | 122626.00 |
+| Employee_1067  |             7 | 130545.00 |
+| Employee_1068  |             8 | 138464.00 |
+| Employee_1073  |             1 |  88059.00 |
+| Employee_1075  |             3 | 103897.00 |
+| Employee_1076  |             4 | 111816.00 |
+| Employee_1077  |             5 | 119735.00 |
+| Employee_1078  |             6 | 127654.00 |
+| Employee_1079  |             7 | 135573.00 |
+| Employee_1080  |             8 | 143492.00 |
+| Employee_1085  |             1 |  93087.00 |
+| Employee_1086  |             2 | 101006.00 |
+| Employee_1087  |             3 | 108925.00 |
+| Employee_1088  |             4 | 116844.00 |
+| Employee_1089  |             5 | 124763.00 |
+| Employee_1090  |             6 | 132682.00 |
+| Employee_1091  |             7 | 140601.00 |
+| Employee_1097  |             1 |  98115.00 |
+| Employee_1098  |             2 | 106034.00 |
+| Employee_1099  |             3 | 113953.00 |
+| Employee_1100  |             4 | 121872.00 |
+| Employee_1101  |             5 | 129791.00 |
+| Employee_1102  |             6 | 137710.00 |
+| Employee_1109  |             1 | 103143.00 |
+| Employee_1110  |             2 | 111062.00 |
+| Employee_1111  |             3 | 118981.00 |
+| Employee_1112  |             4 | 126900.00 |
+| Employee_1113  |             5 | 134819.00 |
+| Employee_1114  |             6 | 142738.00 |
+| Employee_1120  |            12 | 100252.00 |
++----------------+---------------+-----------+
+72 rows in set (0.00 sec)
+
+mysql> SELECT employee_name, status
+    -> FROM employees
+    -> WHERE status IN ('Active', 'Leave');
++----------------+--------+
+| employee_name  | status |
++----------------+--------+
+| Aarav Kulkarni | Active |
+| Isha Mehta     | Active |
+| Rohan Shah     | Active |
+| Neha Patil     | Active |
+| Vikram Rao     | Active |
+| Sana Khan      | Active |
+| Aditya Nair    | Active |
+| Priya Deshmukh | Active |
+| Kunal Joshi    | Active |
+| Meera Iyer     | Active |
+| Sameer Gupta   | Active |
+| Tanya Singh    | Active |
+| Employee_1014  | Active |
+| Employee_1015  | Active |
+| Employee_1016  | Active |
+| Employee_1017  | Active |
+| Employee_1018  | Active |
+| Employee_1019  | Active |
+| Employee_1020  | Active |
+| Employee_1021  | Active |
+| Employee_1022  | Active |
+| Employee_1023  | Active |
+| Employee_1024  | Active |
+| Employee_1025  | Active |
+| Employee_1026  | Active |
+| Employee_1027  | Active |
+| Employee_1028  | Active |
+| Employee_1029  | Leave  |
+| Employee_1031  | Active |
+| Employee_1032  | Active |
+| Employee_1033  | Active |
+| Employee_1034  | Active |
+| Employee_1035  | Active |
+| Employee_1036  | Active |
+| Employee_1037  | Active |
+| Employee_1038  | Active |
+| Employee_1039  | Active |
+| Employee_1040  | Active |
+| Employee_1041  | Active |
+| Employee_1042  | Active |
+| Employee_1043  | Active |
+| Employee_1044  | Active |
+| Employee_1045  | Active |
+| Employee_1046  | Leave  |
+| Employee_1048  | Active |
+| Employee_1049  | Active |
+| Employee_1050  | Active |
+| Employee_1051  | Active |
+| Employee_1052  | Active |
+| Employee_1053  | Active |
+| Employee_1054  | Active |
+| Employee_1055  | Active |
+| Employee_1056  | Active |
+| Employee_1057  | Active |
+| Employee_1058  | Active |
+| Employee_1059  | Active |
+| Employee_1060  | Active |
+| Employee_1061  | Active |
+| Employee_1062  | Active |
+| Employee_1063  | Leave  |
+| Employee_1065  | Active |
+| Employee_1066  | Active |
+| Employee_1067  | Active |
+| Employee_1068  | Active |
+| Employee_1069  | Active |
+| Employee_1070  | Active |
+| Employee_1071  | Active |
+| Employee_1072  | Active |
+| Employee_1073  | Active |
+| Employee_1074  | Active |
+| Employee_1075  | Active |
+| Employee_1076  | Active |
+| Employee_1077  | Active |
+| Employee_1078  | Active |
+| Employee_1079  | Active |
+| Employee_1080  | Leave  |
+| Employee_1082  | Active |
+| Employee_1083  | Active |
+| Employee_1084  | Active |
+| Employee_1085  | Active |
+| Employee_1086  | Active |
+| Employee_1087  | Active |
+| Employee_1088  | Active |
+| Employee_1089  | Active |
+| Employee_1090  | Active |
+| Employee_1091  | Active |
+| Employee_1092  | Active |
+| Employee_1093  | Active |
+| Employee_1094  | Active |
+| Employee_1095  | Active |
+| Employee_1096  | Active |
+| Employee_1097  | Leave  |
+| Employee_1099  | Active |
+| Employee_1100  | Active |
+| Employee_1101  | Active |
+| Employee_1102  | Active |
+| Employee_1103  | Active |
+| Employee_1104  | Active |
+| Employee_1105  | Active |
+| Employee_1106  | Active |
+| Employee_1107  | Active |
+| Employee_1108  | Active |
+| Employee_1109  | Active |
+| Employee_1110  | Active |
+| Employee_1111  | Active |
+| Employee_1112  | Active |
+| Employee_1113  | Active |
+| Employee_1114  | Leave  |
+| Employee_1116  | Active |
+| Employee_1117  | Active |
+| Employee_1118  | Active |
+| Employee_1119  | Active |
+| Employee_1120  | Active |
++----------------+--------+
+113 rows in set (0.00 sec)
+
+mysql> SELECT employee_name, salary
+    -> FROM employees
+    -> WHERE salary BETWEEN 70000 AND 100000
+    -> ORDER BY salary;
++---------------+----------+
+| employee_name | salary   |
++---------------+----------+
+| Employee_1048 | 70084.00 |
+| Employee_1014 | 70838.00 |
+| Employee_1105 | 71467.00 |
+| Employee_1071 | 72221.00 |
+| Employee_1037 | 72975.00 |
+| Employee_1094 | 74358.00 |
+| Employee_1060 | 75112.00 |
+| Employee_1026 | 75866.00 |
+| Employee_1117 | 76495.00 |
+| Employee_1083 | 77249.00 |
+| Employee_1049 | 78003.00 |
+| Employee_1015 | 78757.00 |
+| Employee_1106 | 79386.00 |
+| Employee_1072 | 80140.00 |
+| Employee_1038 | 80894.00 |
+| Employee_1095 | 82277.00 |
+| Employee_1061 | 83031.00 |
+| Employee_1027 | 83785.00 |
+| Employee_1118 | 84414.00 |
+| Employee_1084 | 85168.00 |
+| Employee_1050 | 85922.00 |
+| Employee_1016 | 86676.00 |
+| Employee_1107 | 87305.00 |
+| Employee_1073 | 88059.00 |
+| Employee_1039 | 88813.00 |
+| Employee_1096 | 90196.00 |
+| Employee_1062 | 90950.00 |
+| Employee_1028 | 91704.00 |
+| Employee_1119 | 92333.00 |
+| Employee_1085 | 93087.00 |
+| Employee_1051 | 93841.00 |
+| Employee_1017 | 94595.00 |
+| Employee_1108 | 95224.00 |
+| Employee_1074 | 95978.00 |
+| Employee_1040 | 96732.00 |
+| Employee_1097 | 98115.00 |
+| Employee_1063 | 98869.00 |
+| Employee_1029 | 99623.00 |
++---------------+----------+
+38 rows in set (0.00 sec)
+
+mysql> SELECT employee_name
+    -> FROM employees
+    -> WHERE employee_name LIKE 'Employee_%'
+    -> LIMIT 20;
++---------------+
+| employee_name |
++---------------+
+| Employee_1013 |
+| Employee_1014 |
+| Employee_1015 |
+| Employee_1016 |
+| Employee_1017 |
+| Employee_1018 |
+| Employee_1019 |
+| Employee_1020 |
+| Employee_1021 |
+| Employee_1022 |
+| Employee_1023 |
+| Employee_1024 |
+| Employee_1025 |
+| Employee_1026 |
+| Employee_1027 |
+| Employee_1028 |
+| Employee_1029 |
+| Employee_1030 |
+| Employee_1031 |
+| Employee_1032 |
++---------------+
+20 rows in set (0.01 sec)
+
+mysql> SELECT customer_name, city
+    -> FROM customers
+    -> WHERE city LIKE 'P%';
++---------------+------+
+| customer_name | city |
++---------------+------+
+| Customer_1    | Pune |
+| Customer_11   | Pune |
+| Customer_21   | Pune |
+| Customer_31   | Pune |
+| Customer_41   | Pune |
+| Customer_51   | Pune |
+| Customer_61   | Pune |
+| Customer_71   | Pune |
+| Customer_81   | Pune |
+| Customer_91   | Pune |
+| Customer_101  | Pune |
+| Customer_111  | Pune |
+| Customer_121  | Pune |
+| Customer_131  | Pune |
+| Customer_141  | Pune |
+| Customer_151  | Pune |
+| Customer_161  | Pune |
+| Customer_171  | Pune |
+| Customer_181  | Pune |
+| Customer_191  | Pune |
+| Customer_201  | Pune |
+| Customer_211  | Pune |
+| Customer_221  | Pune |
+| Customer_231  | Pune |
+| Customer_241  | Pune |
+| Customer_251  | Pune |
+| Customer_261  | Pune |
+| Customer_271  | Pune |
+| Customer_281  | Pune |
+| Customer_291  | Pune |
+| Customer_301  | Pune |
+| Customer_311  | Pune |
+| Customer_321  | Pune |
+| Customer_331  | Pune |
+| Customer_341  | Pune |
+| Customer_351  | Pune |
+| Customer_361  | Pune |
+| Customer_371  | Pune |
+| Customer_381  | Pune |
+| Customer_391  | Pune |
+| Customer_401  | Pune |
+| Customer_411  | Pune |
+| Customer_421  | Pune |
+| Customer_431  | Pune |
+| Customer_441  | Pune |
+| Customer_451  | Pune |
+| Customer_461  | Pune |
+| Customer_471  | Pune |
+| Customer_481  | Pune |
+| Customer_491  | Pune |
++---------------+------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name, salary
+    -> FROM employees
+    -> WHERE status = 'Active'
+    ->   AND salary >= 90000;
++-------------+----------------+-----------+
+| employee_id | employee_name  | salary    |
++-------------+----------------+-----------+
+|        1001 | Aarav Kulkarni | 185000.00 |
+|        1002 | Isha Mehta     | 172000.00 |
+|        1003 | Rohan Shah     | 165000.00 |
+|        1004 | Neha Patil     | 145000.00 |
+|        1005 | Vikram Rao     | 178000.00 |
+|        1006 | Sana Khan      | 158000.00 |
+|        1007 | Aditya Nair    | 160000.00 |
+|        1008 | Priya Deshmukh | 150000.00 |
+|        1009 | Kunal Joshi    | 175000.00 |
+|        1010 | Meera Iyer     | 168000.00 |
+|        1011 | Sameer Gupta   | 138000.00 |
+|        1012 | Tanya Singh    | 155000.00 |
+|        1017 | Employee_1017  |  94595.00 |
+|        1018 | Employee_1018  | 102514.00 |
+|        1019 | Employee_1019  | 110433.00 |
+|        1020 | Employee_1020  | 118352.00 |
+|        1021 | Employee_1021  | 126271.00 |
+|        1022 | Employee_1022  | 134190.00 |
+|        1023 | Employee_1023  | 142109.00 |
+|        1028 | Employee_1028  |  91704.00 |
+|        1031 | Employee_1031  | 115461.00 |
+|        1032 | Employee_1032  | 123380.00 |
+|        1033 | Employee_1033  | 131299.00 |
+|        1034 | Employee_1034  | 139218.00 |
+|        1040 | Employee_1040  |  96732.00 |
+|        1041 | Employee_1041  | 104651.00 |
+|        1042 | Employee_1042  | 112570.00 |
+|        1043 | Employee_1043  | 120489.00 |
+|        1044 | Employee_1044  | 128408.00 |
+|        1045 | Employee_1045  | 136327.00 |
+|        1051 | Employee_1051  |  93841.00 |
+|        1052 | Employee_1052  | 101760.00 |
+|        1053 | Employee_1053  | 109679.00 |
+|        1054 | Employee_1054  | 117598.00 |
+|        1055 | Employee_1055  | 125517.00 |
+|        1056 | Employee_1056  | 133436.00 |
+|        1057 | Employee_1057  | 141355.00 |
+|        1062 | Employee_1062  |  90950.00 |
+|        1065 | Employee_1065  | 114707.00 |
+|        1066 | Employee_1066  | 122626.00 |
+|        1067 | Employee_1067  | 130545.00 |
+|        1068 | Employee_1068  | 138464.00 |
+|        1074 | Employee_1074  |  95978.00 |
+|        1075 | Employee_1075  | 103897.00 |
+|        1076 | Employee_1076  | 111816.00 |
+|        1077 | Employee_1077  | 119735.00 |
+|        1078 | Employee_1078  | 127654.00 |
+|        1079 | Employee_1079  | 135573.00 |
+|        1085 | Employee_1085  |  93087.00 |
+|        1086 | Employee_1086  | 101006.00 |
+|        1087 | Employee_1087  | 108925.00 |
+|        1088 | Employee_1088  | 116844.00 |
+|        1089 | Employee_1089  | 124763.00 |
+|        1090 | Employee_1090  | 132682.00 |
+|        1091 | Employee_1091  | 140601.00 |
+|        1096 | Employee_1096  |  90196.00 |
+|        1099 | Employee_1099  | 113953.00 |
+|        1100 | Employee_1100  | 121872.00 |
+|        1101 | Employee_1101  | 129791.00 |
+|        1102 | Employee_1102  | 137710.00 |
+|        1108 | Employee_1108  |  95224.00 |
+|        1109 | Employee_1109  | 103143.00 |
+|        1110 | Employee_1110  | 111062.00 |
+|        1111 | Employee_1111  | 118981.00 |
+|        1112 | Employee_1112  | 126900.00 |
+|        1113 | Employee_1113  | 134819.00 |
+|        1119 | Employee_1119  |  92333.00 |
+|        1120 | Employee_1120  | 100252.00 |
++-------------+----------------+-----------+
+68 rows in set (0.00 sec)
+
+mysql>
+mysql> SELECT employee_id, employee_name, department_id
+    -> FROM employees
+    -> WHERE department_id IN (1, 2, 3);
++-------------+----------------+---------------+
+| employee_id | employee_name  | department_id |
++-------------+----------------+---------------+
+|        1001 | Aarav Kulkarni |             1 |
+|        1013 | Employee_1013  |             1 |
+|        1025 | Employee_1025  |             1 |
+|        1037 | Employee_1037  |             1 |
+|        1049 | Employee_1049  |             1 |
+|        1061 | Employee_1061  |             1 |
+|        1073 | Employee_1073  |             1 |
+|        1085 | Employee_1085  |             1 |
+|        1097 | Employee_1097  |             1 |
+|        1109 | Employee_1109  |             1 |
+|        1002 | Isha Mehta     |             2 |
+|        1014 | Employee_1014  |             2 |
+|        1026 | Employee_1026  |             2 |
+|        1038 | Employee_1038  |             2 |
+|        1050 | Employee_1050  |             2 |
+|        1062 | Employee_1062  |             2 |
+|        1074 | Employee_1074  |             2 |
+|        1086 | Employee_1086  |             2 |
+|        1098 | Employee_1098  |             2 |
+|        1110 | Employee_1110  |             2 |
+|        1003 | Rohan Shah     |             3 |
+|        1015 | Employee_1015  |             3 |
+|        1027 | Employee_1027  |             3 |
+|        1039 | Employee_1039  |             3 |
+|        1051 | Employee_1051  |             3 |
+|        1063 | Employee_1063  |             3 |
+|        1075 | Employee_1075  |             3 |
+|        1087 | Employee_1087  |             3 |
+|        1099 | Employee_1099  |             3 |
+|        1111 | Employee_1111  |             3 |
++-------------+----------------+---------------+
+30 rows in set (0.01 sec)
+
+mysql> SELECT customer_id, customer_name, city, segment
+    -> FROM customers
+    -> WHERE city IN ('Pune', 'Mumbai')
+    ->   AND segment = 'Enterprise';
++-------------+---------------+------+------------+
+| customer_id | customer_name | city | segment    |
++-------------+---------------+------+------------+
+|           1 | Customer_1    | Pune | Enterprise |
+|          11 | Customer_11   | Pune | Enterprise |
+|          21 | Customer_21   | Pune | Enterprise |
+|          31 | Customer_31   | Pune | Enterprise |
+|          41 | Customer_41   | Pune | Enterprise |
+|          51 | Customer_51   | Pune | Enterprise |
+|          61 | Customer_61   | Pune | Enterprise |
+|          71 | Customer_71   | Pune | Enterprise |
+|          81 | Customer_81   | Pune | Enterprise |
+|          91 | Customer_91   | Pune | Enterprise |
+|         101 | Customer_101  | Pune | Enterprise |
+|         111 | Customer_111  | Pune | Enterprise |
+|         121 | Customer_121  | Pune | Enterprise |
+|         131 | Customer_131  | Pune | Enterprise |
+|         141 | Customer_141  | Pune | Enterprise |
+|         151 | Customer_151  | Pune | Enterprise |
+|         161 | Customer_161  | Pune | Enterprise |
+|         171 | Customer_171  | Pune | Enterprise |
+|         181 | Customer_181  | Pune | Enterprise |
+|         191 | Customer_191  | Pune | Enterprise |
+|         201 | Customer_201  | Pune | Enterprise |
+|         211 | Customer_211  | Pune | Enterprise |
+|         221 | Customer_221  | Pune | Enterprise |
+|         231 | Customer_231  | Pune | Enterprise |
+|         241 | Customer_241  | Pune | Enterprise |
+|         251 | Customer_251  | Pune | Enterprise |
+|         261 | Customer_261  | Pune | Enterprise |
+|         271 | Customer_271  | Pune | Enterprise |
+|         281 | Customer_281  | Pune | Enterprise |
+|         291 | Customer_291  | Pune | Enterprise |
+|         301 | Customer_301  | Pune | Enterprise |
+|         311 | Customer_311  | Pune | Enterprise |
+|         321 | Customer_321  | Pune | Enterprise |
+|         331 | Customer_331  | Pune | Enterprise |
+|         341 | Customer_341  | Pune | Enterprise |
+|         351 | Customer_351  | Pune | Enterprise |
+|         361 | Customer_361  | Pune | Enterprise |
+|         371 | Customer_371  | Pune | Enterprise |
+|         381 | Customer_381  | Pune | Enterprise |
+|         391 | Customer_391  | Pune | Enterprise |
+|         401 | Customer_401  | Pune | Enterprise |
+|         411 | Customer_411  | Pune | Enterprise |
+|         421 | Customer_421  | Pune | Enterprise |
+|         431 | Customer_431  | Pune | Enterprise |
+|         441 | Customer_441  | Pune | Enterprise |
+|         451 | Customer_451  | Pune | Enterprise |
+|         461 | Customer_461  | Pune | Enterprise |
+|         471 | Customer_471  | Pune | Enterprise |
+|         481 | Customer_481  | Pune | Enterprise |
+|         491 | Customer_491  | Pune | Enterprise |
++-------------+---------------+------+------------+
+50 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name, manager_id
+    -> FROM employees
+    -> WHERE manager_id IS NULL;
++-------------+----------------+------------+
+| employee_id | employee_name  | manager_id |
++-------------+----------------+------------+
+|        1001 | Aarav Kulkarni |       NULL |
+|        1002 | Isha Mehta     |       NULL |
+|        1003 | Rohan Shah     |       NULL |
+|        1004 | Neha Patil     |       NULL |
+|        1005 | Vikram Rao     |       NULL |
+|        1006 | Sana Khan      |       NULL |
+|        1007 | Aditya Nair    |       NULL |
+|        1008 | Priya Deshmukh |       NULL |
+|        1009 | Kunal Joshi    |       NULL |
+|        1010 | Meera Iyer     |       NULL |
+|        1011 | Sameer Gupta   |       NULL |
+|        1012 | Tanya Singh    |       NULL |
++-------------+----------------+------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name, manager_id
+    -> FROM employees
+    -> WHERE manager_id IS NOT NULL
+    -> LIMIT 20;
++-------------+---------------+------------+
+| employee_id | employee_name | manager_id |
++-------------+---------------+------------+
+|        1013 | Employee_1013 |       1001 |
+|        1025 | Employee_1025 |       1001 |
+|        1037 | Employee_1037 |       1001 |
+|        1049 | Employee_1049 |       1001 |
+|        1061 | Employee_1061 |       1001 |
+|        1073 | Employee_1073 |       1001 |
+|        1085 | Employee_1085 |       1001 |
+|        1097 | Employee_1097 |       1001 |
+|        1109 | Employee_1109 |       1001 |
+|        1014 | Employee_1014 |       1002 |
+|        1026 | Employee_1026 |       1002 |
+|        1038 | Employee_1038 |       1002 |
+|        1050 | Employee_1050 |       1002 |
+|        1062 | Employee_1062 |       1002 |
+|        1074 | Employee_1074 |       1002 |
+|        1086 | Employee_1086 |       1002 |
+|        1098 | Employee_1098 |       1002 |
+|        1110 | Employee_1110 |       1002 |
+|        1015 | Employee_1015 |       1003 |
+|        1027 | Employee_1027 |       1003 |
++-------------+---------------+------------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        COALESCE(manager_id, 0) AS manager_id_display
+    -> FROM employees
+    -> LIMIT 20;
++----------------+--------------------+
+| employee_name  | manager_id_display |
++----------------+--------------------+
+| Aarav Kulkarni |                  0 |
+| Isha Mehta     |                  0 |
+| Rohan Shah     |                  0 |
+| Neha Patil     |                  0 |
+| Vikram Rao     |                  0 |
+| Sana Khan      |                  0 |
+| Aditya Nair    |                  0 |
+| Priya Deshmukh |                  0 |
+| Kunal Joshi    |                  0 |
+| Meera Iyer     |                  0 |
+| Sameer Gupta   |                  0 |
+| Tanya Singh    |                  0 |
+| Employee_1013  |               1001 |
+| Employee_1014  |               1002 |
+| Employee_1015  |               1003 |
+| Employee_1016  |               1004 |
+| Employee_1017  |               1005 |
+| Employee_1018  |               1006 |
+| Employee_1019  |               1007 |
+| Employee_1020  |               1008 |
++----------------+--------------------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT employee_id, employee_name
+    -> FROM employees
+    -> WHERE manager_id IS NULL;
++-------------+----------------+
+| employee_id | employee_name  |
++-------------+----------------+
+|        1001 | Aarav Kulkarni |
+|        1002 | Isha Mehta     |
+|        1003 | Rohan Shah     |
+|        1004 | Neha Patil     |
+|        1005 | Vikram Rao     |
+|        1006 | Sana Khan      |
+|        1007 | Aditya Nair    |
+|        1008 | Priya Deshmukh |
+|        1009 | Kunal Joshi    |
+|        1010 | Meera Iyer     |
+|        1011 | Sameer Gupta   |
+|        1012 | Tanya Singh    |
++-------------+----------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT employee_name, salary
+    -> FROM employees
+    -> ORDER BY salary DESC
+    -> LIMIT 10;
++----------------+-----------+
+| employee_name  | salary    |
++----------------+-----------+
+| Aarav Kulkarni | 185000.00 |
+| Vikram Rao     | 178000.00 |
+| Kunal Joshi    | 175000.00 |
+| Isha Mehta     | 172000.00 |
+| Meera Iyer     | 168000.00 |
+| Rohan Shah     | 165000.00 |
+| Aditya Nair    | 160000.00 |
+| Sana Khan      | 158000.00 |
+| Tanya Singh    | 155000.00 |
+| Priya Deshmukh | 150000.00 |
++----------------+-----------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT employee_name,
+    ->        UPPER(employee_name) AS upper_name,
+    ->        LOWER(employee_name) AS lower_name
+    -> FROM employees
+    -> LIMIT 10;
++----------------+----------------+----------------+
+| employee_name  | upper_name     | lower_name     |
++----------------+----------------+----------------+
+| Aarav Kulkarni | AARAV KULKARNI | aarav kulkarni |
+| Isha Mehta     | ISHA MEHTA     | isha mehta     |
+| Rohan Shah     | ROHAN SHAH     | rohan shah     |
+| Neha Patil     | NEHA PATIL     | neha patil     |
+| Vikram Rao     | VIKRAM RAO     | vikram rao     |
+| Sana Khan      | SANA KHAN      | sana khan      |
+| Aditya Nair    | ADITYA NAIR    | aditya nair    |
+| Priya Deshmukh | PRIYA DESHMUKH | priya deshmukh |
+| Kunal Joshi    | KUNAL JOSHI    | kunal joshi    |
+| Meera Iyer     | MEERA IYER     | meera iyer     |
++----------------+----------------+----------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT CONCAT(employee_name, ' - ', job_title) AS employee_label
+    -> FROM employees
+    -> LIMIT 10;
++--------------------------------------------+
+| employee_label                             |
++--------------------------------------------+
+| Aarav Kulkarni - VP Engineering            |
+| Isha Mehta - Head of Analytics             |
+| Rohan Shah - Finance Director              |
+| Neha Patil - HR Director                   |
+| Vikram Rao - Sales Director                |
+| Sana Khan - Marketing Director             |
+| Aditya Nair - Operations Director          |
+| Priya Deshmukh - Customer Success Director |
+| Kunal Joshi - Product Director             |
+| Meera Iyer - Security Director             |
++--------------------------------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT customer_name,
+    ->        LOWER(customer_email) AS email
+    -> FROM customers
+    -> LIMIT 20;
++---------------+-------------------------+
+| customer_name | email                   |
++---------------+-------------------------+
+| Customer_1    | customer_1@example.com  |
+| Customer_2    | customer_2@example.com  |
+| Customer_3    | customer_3@example.com  |
+| Customer_4    | customer_4@example.com  |
+| Customer_5    | customer_5@example.com  |
+| Customer_6    | customer_6@example.com  |
+| Customer_7    | customer_7@example.com  |
+| Customer_8    | customer_8@example.com  |
+| Customer_9    | customer_9@example.com  |
+| Customer_10   | customer_10@example.com |
+| Customer_11   | customer_11@example.com |
+| Customer_12   | customer_12@example.com |
+| Customer_13   | customer_13@example.com |
+| Customer_14   | customer_14@example.com |
+| Customer_15   | customer_15@example.com |
+| Customer_16   | customer_16@example.com |
+| Customer_17   | customer_17@example.com |
+| Customer_18   | customer_18@example.com |
+| Customer_19   | customer_19@example.com |
+| Customer_20   | customer_20@example.com |
++---------------+-------------------------+
+20 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        salary,
+    ->        ROUND(salary * 12, 0) AS annual_salary
+    -> FROM employees
+    -> LIMIT 10;
++----------------+-----------+---------------+
+| employee_name  | salary    | annual_salary |
++----------------+-----------+---------------+
+| Aarav Kulkarni | 185000.00 |       2220000 |
+| Isha Mehta     | 172000.00 |       2064000 |
+| Rohan Shah     | 165000.00 |       1980000 |
+| Neha Patil     | 145000.00 |       1740000 |
+| Vikram Rao     | 178000.00 |       2136000 |
+| Sana Khan      | 158000.00 |       1896000 |
+| Aditya Nair    | 160000.00 |       1920000 |
+| Priya Deshmukh | 150000.00 |       1800000 |
+| Kunal Joshi    | 175000.00 |       2100000 |
+| Meera Iyer     | 168000.00 |       2016000 |
++----------------+-----------+---------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        hire_date,
+    ->        YEAR(hire_date) AS hire_year,
+    ->        MONTH(hire_date) AS hire_month
+    -> FROM employees
+    -> LIMIT 15;
++----------------+------------+-----------+------------+
+| employee_name  | hire_date  | hire_year | hire_month |
++----------------+------------+-----------+------------+
+| Aarav Kulkarni | 2018-01-15 |      2018 |          1 |
+| Isha Mehta     | 2018-06-11 |      2018 |          6 |
+| Rohan Shah     | 2017-09-04 |      2017 |          9 |
+| Neha Patil     | 2019-02-18 |      2019 |          2 |
+| Vikram Rao     | 2017-11-21 |      2017 |         11 |
+| Sana Khan      | 2019-08-12 |      2019 |          8 |
+| Aditya Nair    | 2018-03-19 |      2018 |          3 |
+| Priya Deshmukh | 2020-01-06 |      2020 |          1 |
+| Kunal Joshi    | 2018-12-10 |      2018 |         12 |
+| Meera Iyer     | 2019-05-27 |      2019 |          5 |
+| Sameer Gupta   | 2020-04-13 |      2020 |          4 |
+| Tanya Singh    | 2021-01-18 |      2021 |          1 |
+| Employee_1013  | 2019-02-07 |      2019 |          2 |
+| Employee_1014  | 2019-03-16 |      2019 |          3 |
+| Employee_1015  | 2019-04-22 |      2019 |          4 |
++----------------+------------+-----------+------------+
+15 rows in set (0.01 sec)
+
+mysql> SELECT employee_name,
+    ->        hire_date,
+    ->        DATEDIFF(CURRENT_DATE, hire_date) AS days_with_company
+    -> FROM employees
+    -> ORDER BY days_with_company DESC
+    -> LIMIT 10;
++----------------+------------+-------------------+
+| employee_name  | hire_date  | days_with_company |
++----------------+------------+-------------------+
+| Rohan Shah     | 2017-09-04 |              3301 |
+| Vikram Rao     | 2017-11-21 |              3223 |
+| Aarav Kulkarni | 2018-01-15 |              3168 |
+| Aditya Nair    | 2018-03-19 |              3105 |
+| Isha Mehta     | 2018-06-11 |              3021 |
+| Kunal Joshi    | 2018-12-10 |              2839 |
+| Employee_1085  | 2019-01-02 |              2816 |
+| Employee_1013  | 2019-02-07 |              2780 |
+| Employee_1086  | 2019-02-08 |              2779 |
+| Neha Patil     | 2019-02-18 |              2769 |
++----------------+------------+-------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT employee_name,
+    ->        salary,
+    ->        CASE
+    ->            WHEN salary >= 150000 THEN 'Executive'
+    ->            WHEN salary >= 100000 THEN 'Senior'
+    ->            WHEN salary >= 70000 THEN 'Mid'
+    ->            ELSE 'Junior'
+    ->        END AS salary_band
+    -> FROM employees;
++----------------+-----------+-------------+
+| employee_name  | salary    | salary_band |
++----------------+-----------+-------------+
+| Aarav Kulkarni | 185000.00 | Executive   |
+| Isha Mehta     | 172000.00 | Executive   |
+| Rohan Shah     | 165000.00 | Executive   |
+| Neha Patil     | 145000.00 | Senior      |
+| Vikram Rao     | 178000.00 | Executive   |
+| Sana Khan      | 158000.00 | Executive   |
+| Aditya Nair    | 160000.00 | Executive   |
+| Priya Deshmukh | 150000.00 | Executive   |
+| Kunal Joshi    | 175000.00 | Executive   |
+| Meera Iyer     | 168000.00 | Executive   |
+| Sameer Gupta   | 138000.00 | Senior      |
+| Tanya Singh    | 155000.00 | Executive   |
+| Employee_1013  |  62919.00 | Junior      |
+| Employee_1014  |  70838.00 | Mid         |
+| Employee_1015  |  78757.00 | Mid         |
+| Employee_1016  |  86676.00 | Mid         |
+| Employee_1017  |  94595.00 | Mid         |
+| Employee_1018  | 102514.00 | Senior      |
+| Employee_1019  | 110433.00 | Senior      |
+| Employee_1020  | 118352.00 | Senior      |
+| Employee_1021  | 126271.00 | Senior      |
+| Employee_1022  | 134190.00 | Senior      |
+| Employee_1023  | 142109.00 | Senior      |
+| Employee_1024  |  60028.00 | Junior      |
+| Employee_1025  |  67947.00 | Junior      |
+| Employee_1026  |  75866.00 | Mid         |
+| Employee_1027  |  83785.00 | Mid         |
+| Employee_1028  |  91704.00 | Mid         |
+| Employee_1029  |  99623.00 | Mid         |
+| Employee_1030  | 107542.00 | Senior      |
+| Employee_1031  | 115461.00 | Senior      |
+| Employee_1032  | 123380.00 | Senior      |
+| Employee_1033  | 131299.00 | Senior      |
+| Employee_1034  | 139218.00 | Senior      |
+| Employee_1035  |  57137.00 | Junior      |
+| Employee_1036  |  65056.00 | Junior      |
+| Employee_1037  |  72975.00 | Mid         |
+| Employee_1038  |  80894.00 | Mid         |
+| Employee_1039  |  88813.00 | Mid         |
+| Employee_1040  |  96732.00 | Mid         |
+| Employee_1041  | 104651.00 | Senior      |
+| Employee_1042  | 112570.00 | Senior      |
+| Employee_1043  | 120489.00 | Senior      |
+| Employee_1044  | 128408.00 | Senior      |
+| Employee_1045  | 136327.00 | Senior      |
+| Employee_1046  | 144246.00 | Senior      |
+| Employee_1047  |  62165.00 | Junior      |
+| Employee_1048  |  70084.00 | Mid         |
+| Employee_1049  |  78003.00 | Mid         |
+| Employee_1050  |  85922.00 | Mid         |
+| Employee_1051  |  93841.00 | Mid         |
+| Employee_1052  | 101760.00 | Senior      |
+| Employee_1053  | 109679.00 | Senior      |
+| Employee_1054  | 117598.00 | Senior      |
+| Employee_1055  | 125517.00 | Senior      |
+| Employee_1056  | 133436.00 | Senior      |
+| Employee_1057  | 141355.00 | Senior      |
+| Employee_1058  |  59274.00 | Junior      |
+| Employee_1059  |  67193.00 | Junior      |
+| Employee_1060  |  75112.00 | Mid         |
+| Employee_1061  |  83031.00 | Mid         |
+| Employee_1062  |  90950.00 | Mid         |
+| Employee_1063  |  98869.00 | Mid         |
+| Employee_1064  | 106788.00 | Senior      |
+| Employee_1065  | 114707.00 | Senior      |
+| Employee_1066  | 122626.00 | Senior      |
+| Employee_1067  | 130545.00 | Senior      |
+| Employee_1068  | 138464.00 | Senior      |
+| Employee_1069  |  56383.00 | Junior      |
+| Employee_1070  |  64302.00 | Junior      |
+| Employee_1071  |  72221.00 | Mid         |
+| Employee_1072  |  80140.00 | Mid         |
+| Employee_1073  |  88059.00 | Mid         |
+| Employee_1074  |  95978.00 | Mid         |
+| Employee_1075  | 103897.00 | Senior      |
+| Employee_1076  | 111816.00 | Senior      |
+| Employee_1077  | 119735.00 | Senior      |
+| Employee_1078  | 127654.00 | Senior      |
+| Employee_1079  | 135573.00 | Senior      |
+| Employee_1080  | 143492.00 | Senior      |
+| Employee_1081  |  61411.00 | Junior      |
+| Employee_1082  |  69330.00 | Junior      |
+| Employee_1083  |  77249.00 | Mid         |
+| Employee_1084  |  85168.00 | Mid         |
+| Employee_1085  |  93087.00 | Mid         |
+| Employee_1086  | 101006.00 | Senior      |
+| Employee_1087  | 108925.00 | Senior      |
+| Employee_1088  | 116844.00 | Senior      |
+| Employee_1089  | 124763.00 | Senior      |
+| Employee_1090  | 132682.00 | Senior      |
+| Employee_1091  | 140601.00 | Senior      |
+| Employee_1092  |  58520.00 | Junior      |
+| Employee_1093  |  66439.00 | Junior      |
+| Employee_1094  |  74358.00 | Mid         |
+| Employee_1095  |  82277.00 | Mid         |
+| Employee_1096  |  90196.00 | Mid         |
+| Employee_1097  |  98115.00 | Mid         |
+| Employee_1098  | 106034.00 | Senior      |
+| Employee_1099  | 113953.00 | Senior      |
+| Employee_1100  | 121872.00 | Senior      |
+| Employee_1101  | 129791.00 | Senior      |
+| Employee_1102  | 137710.00 | Senior      |
+| Employee_1103  |  55629.00 | Junior      |
+| Employee_1104  |  63548.00 | Junior      |
+| Employee_1105  |  71467.00 | Mid         |
+| Employee_1106  |  79386.00 | Mid         |
+| Employee_1107  |  87305.00 | Mid         |
+| Employee_1108  |  95224.00 | Mid         |
+| Employee_1109  | 103143.00 | Senior      |
+| Employee_1110  | 111062.00 | Senior      |
+| Employee_1111  | 118981.00 | Senior      |
+| Employee_1112  | 126900.00 | Senior      |
+| Employee_1113  | 134819.00 | Senior      |
+| Employee_1114  | 142738.00 | Senior      |
+| Employee_1115  |  60657.00 | Junior      |
+| Employee_1116  |  68576.00 | Junior      |
+| Employee_1117  |  76495.00 | Mid         |
+| Employee_1118  |  84414.00 | Mid         |
+| Employee_1119  |  92333.00 | Mid         |
+| Employee_1120  | 100252.00 | Senior      |
++----------------+-----------+-------------+
+120 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->     MIN(salary) AS minimum_salary,
+    ->     MAX(salary) AS maximum_salary,
+    ->     AVG(salary) AS average_salary,
+    ->     SUM(salary) AS total_payroll
+    -> FROM employees;
++----------------+----------------+----------------+---------------+
+| minimum_salary | maximum_salary | average_salary | total_payroll |
++----------------+----------------+----------------+---------------+
+|       55629.00 |      185000.00 |  105418.616667 |   12650234.00 |
++----------------+----------------+----------------+---------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql> SELECT
+    ->     COUNT(*) AS total_rows,
+    ->     COUNT(manager_id) AS rows_with_manager,
+    ->     COUNT(DISTINCT department_id) AS department_count
+    -> FROM employees;
++------------+-------------------+------------------+
+| total_rows | rows_with_manager | department_count |
++------------+-------------------+------------------+
+|        120 |               108 |               12 |
++------------+-------------------+------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT department_id,
+    ->        COUNT(*) AS employee_count,
+    ->        AVG(salary) AS avg_salary,
+    ->        SUM(salary) AS payroll
+    -> FROM employees
+    -> GROUP BY department_id
+    -> ORDER BY payroll DESC;
++---------------+----------------+---------------+------------+
+| department_id | employee_count | avg_salary    | payroll    |
++---------------+----------------+---------------+------------+
+|             6 |             10 | 126163.400000 | 1261634.00 |
+|             5 |             10 | 121036.300000 | 1210363.00 |
+|             7 |             10 | 115490.500000 | 1154905.00 |
+|             8 |             10 | 112617.600000 | 1126176.00 |
+|             4 |             10 | 110609.200000 | 1106092.00 |
+|             3 |             10 | 105482.100000 | 1054821.00 |
+|             9 |             10 | 104244.700000 | 1042447.00 |
+|            10 |             10 | 101671.800000 | 1016718.00 |
+|             2 |             10 |  99055.000000 |  990550.00 |
+|             1 |             10 |  93227.900000 |  932279.00 |
+|            11 |             10 |  87798.900000 |  877989.00 |
+|            12 |             10 |  87626.000000 |  876260.00 |
++---------------+----------------+---------------+------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT department_id,
+    ->        COUNT(*) AS employee_count
+    -> FROM employees
+    -> GROUP BY department_id
+    -> HAVING COUNT(*) >= 5
+    -> ORDER BY employee_count DESC;
++---------------+----------------+
+| department_id | employee_count |
++---------------+----------------+
+|             1 |             10 |
+|             2 |             10 |
+|             3 |             10 |
+|             4 |             10 |
+|             5 |             10 |
+|             6 |             10 |
+|             7 |             10 |
+|             8 |             10 |
+|             9 |             10 |
+|            10 |             10 |
+|            11 |             10 |
+|            12 |             10 |
++---------------+----------------+
+12 rows in set (0.01 sec)
+
+mysql> SELECT department_id,
+    ->        COUNT(*) AS active_employees,
+    ->        ROUND(AVG(salary), 2) AS avg_salary
+    -> FROM employees
+    -> WHERE status = 'Active'
+    -> GROUP BY department_id
+    -> HAVING COUNT(*) >= 5
+    ->    AND AVG(salary) > 80000
+    -> ORDER BY avg_salary DESC;
++---------------+------------------+------------+
+| department_id | active_employees | avg_salary |
++---------------+------------------+------------+
+|             6 |                8 |  126419.25 |
+|             5 |                9 |  123415.56 |
+|             7 |                9 |  121583.11 |
+|             4 |                9 |  111033.78 |
+|             8 |                9 |  109187.11 |
+|             9 |                9 |  109004.00 |
+|             3 |                9 |  106216.89 |
+|             2 |                9 |   98279.56 |
+|            10 |                9 |   96941.33 |
+|             1 |                8 |   96405.63 |
+|            11 |                9 |   90647.11 |
+|            12 |               10 |   87626.00 |
++---------------+------------------+------------+
+12 rows in set (0.01 sec)
+
+mysql>
+mysql> SELECT employee_id, employee_name, salary
+    -> FROM employees
+    -> WHERE salary > (
+    ->     SELECT AVG(salary)
+    ->     FROM employees
+    -> )
+    -> ORDER BY salary DESC;
++-------------+----------------+-----------+
+| employee_id | employee_name  | salary    |
++-------------+----------------+-----------+
+|        1001 | Aarav Kulkarni | 185000.00 |
+|        1005 | Vikram Rao     | 178000.00 |
+|        1009 | Kunal Joshi    | 175000.00 |
+|        1002 | Isha Mehta     | 172000.00 |
+|        1010 | Meera Iyer     | 168000.00 |
+|        1003 | Rohan Shah     | 165000.00 |
+|        1007 | Aditya Nair    | 160000.00 |
+|        1006 | Sana Khan      | 158000.00 |
+|        1012 | Tanya Singh    | 155000.00 |
+|        1008 | Priya Deshmukh | 150000.00 |
+|        1004 | Neha Patil     | 145000.00 |
+|        1046 | Employee_1046  | 144246.00 |
+|        1080 | Employee_1080  | 143492.00 |
+|        1114 | Employee_1114  | 142738.00 |
+|        1023 | Employee_1023  | 142109.00 |
+|        1057 | Employee_1057  | 141355.00 |
+|        1091 | Employee_1091  | 140601.00 |
+|        1034 | Employee_1034  | 139218.00 |
+|        1068 | Employee_1068  | 138464.00 |
+|        1011 | Sameer Gupta   | 138000.00 |
+|        1102 | Employee_1102  | 137710.00 |
+|        1045 | Employee_1045  | 136327.00 |
+|        1079 | Employee_1079  | 135573.00 |
+|        1113 | Employee_1113  | 134819.00 |
+|        1022 | Employee_1022  | 134190.00 |
+|        1056 | Employee_1056  | 133436.00 |
+|        1090 | Employee_1090  | 132682.00 |
+|        1033 | Employee_1033  | 131299.00 |
+|        1067 | Employee_1067  | 130545.00 |
+|        1101 | Employee_1101  | 129791.00 |
+|        1044 | Employee_1044  | 128408.00 |
+|        1078 | Employee_1078  | 127654.00 |
+|        1112 | Employee_1112  | 126900.00 |
+|        1021 | Employee_1021  | 126271.00 |
+|        1055 | Employee_1055  | 125517.00 |
+|        1089 | Employee_1089  | 124763.00 |
+|        1032 | Employee_1032  | 123380.00 |
+|        1066 | Employee_1066  | 122626.00 |
+|        1100 | Employee_1100  | 121872.00 |
+|        1043 | Employee_1043  | 120489.00 |
+|        1077 | Employee_1077  | 119735.00 |
+|        1111 | Employee_1111  | 118981.00 |
+|        1020 | Employee_1020  | 118352.00 |
+|        1054 | Employee_1054  | 117598.00 |
+|        1088 | Employee_1088  | 116844.00 |
+|        1031 | Employee_1031  | 115461.00 |
+|        1065 | Employee_1065  | 114707.00 |
+|        1099 | Employee_1099  | 113953.00 |
+|        1042 | Employee_1042  | 112570.00 |
+|        1076 | Employee_1076  | 111816.00 |
+|        1110 | Employee_1110  | 111062.00 |
+|        1019 | Employee_1019  | 110433.00 |
+|        1053 | Employee_1053  | 109679.00 |
+|        1087 | Employee_1087  | 108925.00 |
+|        1030 | Employee_1030  | 107542.00 |
+|        1064 | Employee_1064  | 106788.00 |
+|        1098 | Employee_1098  | 106034.00 |
++-------------+----------------+-----------+
+57 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

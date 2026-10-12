@@ -1,0 +1,101 @@
+EmployeeID,Age,Gender,Location,JobTitle,Salary
+1,29,Male,Austin,HR Manager,198686.2
+2,41,Male,Austin,HR Manager,60732.45
+3,33,Female,Seattle,Software Engineer,142708.49
+4,46,Female,New York,Project Manager,178784.12
+5,25,Male,Austin,Project Manager,88112.93
+6,30,Female,New York,Project Manager,141340.89
+7,38,Male,San Francisco,DevOps Engineer,139597.33
+8,52,Male,San Francisco,Software Engineer,171140.65
+9,38,Male,Chicago,DevOps Engineer,157008.65
+10,34,Female,Seattle,Software Engineer,155465.05
+11,41,Male,Austin,Software Engineer,121575.2
+12,35,Female,New York,DevOps Engineer,160668.1
+13,47,Male,Seattle,Software Engineer,132419.5
+14,48,Female,New York,HR Manager,92720.59
+15,46,Male,Seattle,Data Scientist,149043.36
+16,53,Male,New York,Data Scientist,172028.05
+17,46,Female,Chicago,HR Manager,182781.62
+18,29,Male,New York,DevOps Engineer,112298.0
+19,41,Female,Austin,HR Manager,147367.23
+20,30,Female,New York,Data Scientist,180159.53
+21,59,Female,Austin,Software Engineer,99752.89
+22,55,Male,Chicago,Project Manager,190716.08
+23,30,Male,New York,Project Manager,170533.42
+24,41,Female,Austin,Project Manager,150834.37
+25,47,Male,New York,Data Scientist,86020.26
+26,53,Female,Austin,Project Manager,180487.8
+27,60,Female,Chicago,DevOps Engineer,151066.18
+28,26,Female,San Francisco,Data Scientist,104894.75
+29,33,Female,Chicago,Software Engineer,91945.2
+30,47,Male,New York,Project Manager,187222.97
+31,31,Female,Seattle,HR Manager,113313.91
+32,55,Female,New York,Data Scientist,171683.44
+33,46,Female,Seattle,Software Engineer,146779.69
+34,38,Female,Seattle,HR Manager,181819.8
+35,52,Female,New York,Software Engineer,118172.53
+36,39,Male,New York,Data Scientist,127849.92
+37,41,Female,Austin,Data Scientist,185566.89
+38,29,Male,New York,HR Manager,105345.0
+39,53,Male,Seattle,Software Engineer,142381.93
+40,59,Male,Chicago,Data Scientist,94357.8
+41,59,Male,New York,Software Engineer,119419.92
+42,46,Female,San Francisco,DevOps Engineer,138185.4
+43,60,Male,Chicago,HR Manager,82539.81
+44,57,Female,New York,Project Manager,89981.12
+45,52,Male,Chicago,Data Scientist,167927.26
+46,52,Male,San Francisco,Data Scientist,103823.86
+47,25,Male,Chicago,Project Manager,78401.77
+48,49,Male,Seattle,Data Scientist,97338.59
+49,51,Male,Austin,Software Engineer,129921.51
+50,44,Male,San Francisco,DevOps Engineer,122909.34
+51,25,Female,Chicago,Software Engineer,91691.29
+52,53,Male,Seattle,HR Manager,134355.42
+53,40,Female,Chicago,DevOps Engineer,98755.64
+54,31,Male,Chicago,HR Manager,112671.98
+55,59,Male,Seattle,Project Manager,127657.29
+56,34,Female,New York,Data Scientist,112798.99
+57,56,Female,Austin,Software Engineer,111955.49
+58,46,Male,San Francisco,Data Scientist,148895.18
+59,58,Female,Austin,DevOps Engineer,66161.88
+60,46,Male,New York,Project Manager,92773.51
+61,36,Male,Seattle,Project Manager,155335.61
+62,52,Female,Chicago,Software Engineer,144008.16
+63,54,Female,San Francisco,Project Manager,165884.5
+64,47,Male,Austin,Software Engineer,151098.33
+65,28,Female,New York,Software Engineer,95647.68
+66,57,Female,New York,Software Engineer,90095.01
+67,30,Female,Austin,Data Scientist,176929.61
+68,39,Male,Seattle,Project Manager,198520.58
+69,54,Female,Seattle,Data Scientist,91919.54
+70,47,Male,Chicago,Project Manager,178871.04
+71,27,Female,Chicago,DevOps Engineer,193151.71
+72,49,Female,Seattle,Project Manager,123871.04
+73,42,Female,Chicago,Data Scientist,118183.57
+74,56,Female,Austin,DevOps Engineer,91776.85
+75,36,Male,Seattle,HR Manager,118738.79
+76,33,Female,Chicago,DevOps Engineer,188790.1
+77,30,Male,Austin,Software Engineer,118576.38
+78,46,Male,Chicago,HR Manager,144244.09
+79,44,Female,San Francisco,HR Manager,176736.38
+80,36,Male,Seattle,DevOps Engineer,83965.85
+81,39,Female,Seattle,Data Scientist,148564.11
+82,28,Male,New York,Data Scientist,113663.9
+83,47,Male,Chicago,DevOps Engineer,86138.91
+84,29,Male,San Francisco,Software Engineer,126455.14
+85,40,Male,New York,Project Manager,95830.1
+86,44,Male,San Francisco,Data Scientist,67475.36
+87,57,Female,Chicago,DevOps Engineer,82771.54
+88,27,Female,Seattle,Project Manager,97133.63
+89,28,Male,Chicago,DevOps Engineer,72076.46
+90,35,Male,New York,Data Scientist,123324.52
+91,52,Female,Seattle,DevOps Engineer,171540.58
+92,38,Male,San Francisco,Data Scientist,92320.85
+93,32,Female,Chicago,Data Scientist,106549.97
+94,30,Male,San Francisco,Software Engineer,88261.39
+95,51,Female,San Francisco,Project Manager,171746.31
+96,44,Male,Austin,HR Manager,62135.83
+97,57,Male,Chicago,HR Manager,170368.31
+98,27,Female,Austin,Data Scientist,73802.62
+99,49,Male,Austin,DevOps Engineer,75334.77
+100,55,Male,Austin,Data Scientist,66374.95
